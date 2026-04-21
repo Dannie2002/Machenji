@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollVelocityContainer, ScrollVelocityRow } from '../Components/ScrollVelocity';
 import { Tickets, Search } from 'lucide-react'
+import BuyTicket from "../Components/BuyTicket.jsx";
 
 
 const ScrollMachenjiWord = () => {
@@ -13,7 +14,7 @@ const ScrollMachenjiWord = () => {
         <h4 className='uppercase zalando font-bold text-[#fffced]  text-[34px]'><span className='text-[#6d6e67]'>Seamless <span className='text-[#c3b5b5]'>Event </span>Hosting</span></h4>
     
         </div>
-            <Tickets className="text-(--primary-color)"/>
+            <BuyTicket color='#f8b401' size={38} className="text-(--primary-color)"/>
     </ScrollVelocityRow>
         <ScrollVelocityRow baseVelocity={2} className=''>
            <div className='flex px-6 items-center justify-center gap-6 min-w-[400px]' >

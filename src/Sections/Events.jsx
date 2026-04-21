@@ -6,7 +6,10 @@ import noise from '../assets/Images/Noise.png'
 import Gwamba_concert from '../assets/Images/GwambaConcert.jpg'
 import hero1 from '../assets/Images/GwambaConcert.jpg'
 import Zeze_concert from '../assets/Images/ZezeConcert.jpg'
-import { Search, Ticket, ShoppingCart } from 'lucide-react'
+import Tay_concert from '../assets/Images/TayGrin_concert.jpg'
+import Lulu_legacy from '../assets/Images/Lulu_legacy.jpg'
+import Take_over from '../assets/Images/Take_over.jpg'
+import { Search, Ticket, ShoppingCart,ArrowRight } from 'lucide-react'
 import D_j from '../assets/Images/DJ.jpg'
 import FilterTabs from "../Components/FilterTabs";
 
@@ -33,7 +36,7 @@ const Events_data = [
     description: 'Analytics dashboard with cards, charts, and dark/light themes.',
       Category:"Music",
     link: '#',
-    image: D_j
+    image: Tay_concert
   },
 
     {
@@ -42,16 +45,16 @@ const Events_data = [
     description: 'Analytics dashboard with cards, charts, and dark/light themes.',
      Category:"Music",
     link: '#',
-    image: Machenji_hero
+    image: Lulu_legacy
   },
 
       {
           id:5,
-    title: 'Machenji_hero',
+    title: '  Take Over Mwanza',
     description: 'Analytics dashboard with cards, charts, and dark/light themes.',
       Category:"Sports",
     link: '#',
-    image: Machenji_hero
+    image: Take_over
   },
   
      {
@@ -87,7 +90,7 @@ selectedCategory === "All"
 
 
   return (
-    <section className='min-h-[85vh] flex items-start justify-start flex-col relative z-0' style={bg} >
+    <section className='min-h-[85vh]  relative z-0' style={bg} >
               
                
                <img src={noise} alt="Noise" className="absolute top-0 left-0 w-full h-full object-cover opacity-40 z-10" />
@@ -97,7 +100,7 @@ selectedCategory === "All"
              
             
            
-    <div className="Section_wrapper z-50">
+    <div className="Section_wrapper relative z-50">
 
        <div className="flex  flex-col mt-18  items-start  justify-center space-y-6 ">
         <div className='bg-[#a4010f] div_clip px-4 py-4'>
@@ -111,7 +114,7 @@ selectedCategory === "All"
 
          </div>
                     
-      <h1 className="text-[24px] z-50 leading-[28px] text-left  text-[#c3b5b5]  zalando Capitalize font-light  mt-2  lg:text-[22px] lg:leading-[22px]  lg:max-w-full"> <span className='text-[#fffced]'>See a bunch of</span> events</h1>
+      <h1 className="text-[24px] z-50 leading-[28px] text-left  text-[#c3b5b5]  zalando Capitalize font-light  mt-2  lg:text-[22px] lg:leading-[22px]  lg:max-w-full"> <span className='text-[#fffced]'>Find amazing</span> events</h1>
                     
       <FilterTabs
 label="Filter By Category:"
@@ -134,11 +137,11 @@ setSelectedOption={setSelectedCategory}
     {filteredEvents.map((event) => (
       <div key={event.id} className="group rounded-sm relative">
 
-        <div className="h-[430px] relative">
+        <div className="h-[430px]  relative">
           <img
             src={event.image}
             alt={event.title}
-            className="object-cover rounded-sm grayscale group-hover:grayscale-0 size-full"
+            className="object-cover rounded-sm grayscale  group-hover:grayscale-0 size-full"
           />
 
           <img
@@ -151,37 +154,39 @@ setSelectedOption={setSelectedCategory}
         </div>
 
         <div className="flex items-center justify-between py-4">
-          <h4 className="text-[#fffced] line-clamp-1 uppercase zalando text-[18px]">
+          <h4 className="text-[#ece9dd] line-clamp-1 uppercase chivo text-[18px]">
             {event.title}
           </h4>
-          <ShoppingCart className='text-(--primary-color)' />
+           <div className='bg-(--primary-color) rounded-sm p-2'>
+            <ArrowRight className='text-[#FFFCED] size-6' />
+            </div>
 
          
         </div>
 
-       <div className="relative flex bg-gradient-to-r from-[#4f0006] via-[#a4010f] to-[#4f0006] items-start justify-between gap-3 px-6 py-3">
+       <div className="relative flex  items-start justify-between gap-3">
             <img
             src={noise}
             alt="noise"
-            className="absolute  inset-0 size-full mix-blend-multiply opacity-10 object-cover"
+            className="absolute  inset-0 size-full mix-blend-multiply opacity-20 object-cover"
           />
 
     <div className="flex flex-col">
-      <h4 className="text-[#eadf06] tracking-normal font-bold agdasima text-[26px]">
-        MK12,000.00
+      <h4 className="text-[#f8b401] tracking-normal font-bold zalando text-[24px]">
+       50K
       </h4>
 
-      <h4 className="text-[14px] text-[#fffced] chivo tracking-widest uppercase font-light">
+      <h4 className="text-[12px] text-[#fffced] chivo tracking-widest uppercase font-light">
         Standard Ticket
       </h4>
     </div>
       <div className="flex flex-col">
-      <h4 className="text-[#eadf06] tracking-normal font-bold agdasima text-[26px]">
-        MK12,000.00
+      <h4 className="text-[#f8b401] tracking-normal font-bold zalando text-[24px]">
+        112K
       </h4>
 
-      <h4 className="text-[14px] text-[#fffced] chivo tracking-widest uppercase font-light">
-        Standard Ticket
+      <h4 className="text-[12px] text-[#fffced] chivo tracking-widest uppercase font-light">
+        VIP Ticket
       </h4>
     </div>
 

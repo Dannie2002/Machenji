@@ -13,7 +13,7 @@ export default function FilterTabs({
 {label}
 </h4>
 
-<div className="flex lg:gap-6 gap-4">
+<div className="flex lg:gap-6  flex-wrap gap-4">
 
 <button
 onClick={() => setSelectedOption("All")}
