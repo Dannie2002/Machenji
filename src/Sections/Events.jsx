@@ -7,9 +7,10 @@ import Gwamba_concert from '../assets/Images/GwambaConcert.jpg'
 import hero1 from '../assets/Images/GwambaConcert.jpg'
 import Zeze_concert from '../assets/Images/ZezeConcert.jpg'
 import Tay_concert from '../assets/Images/TayGrin_concert.jpg'
+import lines from '../assets/Images/Lines.png'
 import Lulu_legacy from '../assets/Images/Lulu_legacy.jpg'
 import Take_over from '../assets/Images/Take_over.jpg'
-import { Search, Ticket, ShoppingCart,ArrowRight,CalendarDays, MapPin } from 'lucide-react'
+import { Search, Ticket, ShoppingCart,ArrowRight,CalendarDays, MapPin, Download, Heart  } from 'lucide-react'
 import D_j from '../assets/Images/DJ.jpg'
 import FilterTabs from "../Components/FilterTabs";
 import Scribble from '../Components/Scribble'
@@ -85,11 +86,11 @@ const Events = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: -40 },
+    hidden: { opacity: 0, x: -40 },
     show: { 
       opacity: 1, 
-      y: 0,
-      transition: { duration: 0.45, ease: "easeInOut" }
+      x: 0,
+      transition: { duration: 0.55, ease: "easeInOut" }
     },
   };
 
@@ -126,8 +127,8 @@ selectedCategory === "All"
     <div className="Section_wrapper relative z-50">
 
        <div className="flex  flex-col mt-18  items-start  justify-center space-y-6 ">
-        <div className='bg-[#a4010f] div_clip px-4 py-4'>
-            <motion.h1 className="text-[14px] tracking-[10px] text-[#fffced]  font-bold text-center leading-[16px]  lg:text-left lg:text-[14px] lg:leading-[14px] zalando uppercase"
+        <div className='bg-[#a4010f] px-4 py-4'>
+            <motion.h1 className="text-[16px] tracking-[10px] text-[#fffced]  font-bold text-center leading-[16px]  lg:text-left lg:text-[18px] lg:leading-[14px] chivo uppercase"
              initial={{ opacity: 0, x: -37 }}
              animate={{ opacity: 1, x: 0 }}
              transition={{ delay: 0.5, ease: "easeOut" }}
@@ -151,7 +152,6 @@ setSelectedOption={setSelectedCategory}
 />       
          
       
-   
        </div>
 
         <motion.div
@@ -165,7 +165,7 @@ setSelectedOption={setSelectedCategory}
       <div key={event.id} className="group rounded-sm flex flex-col lg:flex-row gap-6 lg:gap-12 relative">
         <div className='absolute inset-0 size-24 bg-(--primary-color)'></div>
 
-        <div className="h-[330px] lg:w-[40%] border-[#fffced]/60 border-2  relative">
+        <div className="h-[330px] lg:w-[40%]   relative">
           <img
             src={event.image}
             alt={event.title}
@@ -177,8 +177,9 @@ setSelectedOption={setSelectedCategory}
             alt="noise"
             className="absolute rounded-sm inset-0 size-full mix-blend-multiply opacity-40 object-cover"
           />
-          <div className='hidden group-hover:block absolute z-20 bottom-0 right-0 p-4 bg-black/50 text-white rounded-tl-sm'>
-            <h4>Show me</h4>
+          <div className='hidden  gap-4 group-hover:flex absolute z-20 bottom-0 -0 p-4 bg-black/50 text-white rounded-tl-sm'>
+            <Download />
+            <Heart />
 
           </div>
           <div className="absolute rounded-sm inset-0 group-hover:bg-gradient-to-t from-[#4f0006] via-[#a4010f]/40 to-transparent transition-all duration-500 bg-blend-multiply z-10 size-full"></div>
@@ -189,23 +190,23 @@ setSelectedOption={setSelectedCategory}
             initial="hidden"
             whileInView="show"
             viewport={{once:true}}
-         className="flex relative items-start flex-col gap-4 lg:w-[40%] justify-start ">
+         className="flex relative items-start flex-col gap-4 lg:w-[40%] justify-start z-50">
              <div className="absolute bottom-0 rounded-sm size-34 bg-gradient-to-t from-[#9aae02]/50 blur-xl opacity-20 via-[#a4010f]/20 to-transparent transition-all duration-500 bg-blend-multiply z-10 "></div>
           <motion.h4
           variants={itemVariants}
-          className="text-[#ece9dd] font-bold line-clamp-1 capitalize zalando text-[32px]">
+          className="text-[#ece9dd] font-bold line-clamp-1 capitalize zalando lg:text-[32px] z-50">
             {event.title}
           </motion.h4>
-            <div className='flex flex-col gap-2 items-start'>
+            <div className='flex flex-col gap-2 items-start z-50'>
                           <motion.h4 variants={itemVariants} className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">Fri, 30 Aug <span className='text-[#ebe6e6]'>2026</span></motion.h4> 
                            <motion.h4 variants={itemVariants} className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">Auro Lounge, Lilongwe</motion.h4> 
                             <motion.h4 variants={itemVariants}  className="text-[#f8b401] line-clamp-1 font-light capitalize zalando text-[14px]">Tickets from <span className='font-semibold'>40K</span> </motion.h4> 
             </div>
-            <div className='bg-[#fffced]/40 px-4 py-2 rounded-full'>
+            <div className='bg-[#fffced]/40 px-4 py-2 z-50 rounded-full'>
               <p className='text-[12px] white font-light'>Tickets Available</p>
             </div>
        
-         
+             <img src={lines} className='absolute  inset-0  size-full z-0 opacity-20' />
             <Scribble color="#d2691e" className='absolute size-8 bottom-16 left-50 lg:bottom-0 lg:left-0'/>
          
         </motion.div>
@@ -222,7 +223,7 @@ setSelectedOption={setSelectedCategory}
                   
                  </motion.div>
        
-<div className='rounded-sm  flex items-center w-full p-4 justify-between'>
+<div className='rounded-sm   flex items-center w-full p-4 justify-between'>
  <p className='zalando hidden text-left text-[16px] lg:w-[530px] z-50 text-[#a49f8c]'>View<span className='font-bold text-(--primary-color)'> Event Details</span> for more and buy your tickets.</p>
 </div>
 
