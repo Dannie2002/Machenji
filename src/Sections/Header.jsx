@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, RectangleEllipsis} from 'lucide-react';
 import Machenji_logo from '../assets/Images/Machenji_logo.png'
 
 
@@ -8,10 +8,10 @@ const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div className="fixed bg-transparent  top-0 left-0 z-50 w-full ">
+    <div className="fixed bg-transparent hidden  top-0 left-0 z-50 w-full ">
       <div className='flex items-center justify-between px-6 py-4 lg:px-22'>
         <a href="#home" className="flex items-center">
-          <img src={Machenji_logo} className='size-20' alt="" />
+         <RectangleEllipsis className='white size-8' />
          
         </a>
 
@@ -29,11 +29,7 @@ const Header = () => {
           <span className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ease-in-out ${navOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1'}`}></span>
         </button>
 
-        <motion.div className='flex items-center gap-4 group relative px-4 py-2.5 text-[#fffced] zalando uppercase font-bold transition-all duration-300 bg-(--primary-color) border border-none  text-[14px]'
-          whileHover={{ boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.3)" }}
-          whileTap={{ scale: 0.95 }}
-        
-        >
+        <motion.div className='flex items-center gap-4 group relative px-4 cursor-pointer rounded-sm py-2.5 text-[#fffced] agdasima uppercase font-bold transition-all duration-300 bg-(--primary-color) border border-none  text-[18px]'>
           <span>
             Host An Event
           </span>

@@ -35,12 +35,12 @@ const LandingPage = () => {
     <div className="lg:px-22 px-6 z-50">
 
        <div className="flex  flex-col  items-start  justify-center space-y-6 ">
-            <motion.h1 className="text-[14px] tracking-[10px] text-[#fffced] font-bold text-center leading-[16px] chivo lg:text-left lg:text-[10px] lg:leading-[14px]  uppercase"
+            <motion.h1 className="text-[14px] tracking-[10px] text-[#fffced] font-bold text-center leading-[16px] agdasima  lg:text-left lg:text-[12px] lg:leading-[14px]  uppercase"
              initial={{ opacity: 0, x: -37 }}
              animate={{ opacity: 1, x: 0 }}
              transition={{ delay: 0.5, ease: "easeOut" }}
             >
-               Visit Machenji
+               Visit Machenji for
             </motion.h1>
 
          
@@ -53,7 +53,7 @@ const LandingPage = () => {
     
         type="text"
         placeholder="Search for an Event"
-        className="border flex items-center archivo white text-[14px] bg-[#fffced]/15 backdrop-blur-sm pl-16 pr-6 py-3 border-[#fffced]/20 outline-offset-0 focus:outline-(--primary-color)/60 focus:border-(--primary-color) rounded-full placeholder:text-[14px] placeholder:text-[#fffced] w-full lg:w-[500px]  transition-width duration-350 ease-in-out"
+        className="border flex items-center hover:bg-[#6d6e67] archivo white text-[14px] bg-[#fffced]/15 backdrop-blur-sm pl-16 pr-6 py-3 border-[#fffced]/20 outline-offset-0 outline-none  focus:border-none rounded-full placeholder:text-[14px] placeholder:text-[#fffced] w-full lg:w-[500px]  transition-width duration-350 ease-in-out"
       />
       
  <Search className="text-[#fffced] absolute left-6 top-[12px] size-5" />

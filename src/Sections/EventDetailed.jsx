@@ -11,6 +11,7 @@ import D_j from '../assets/Images/DJ.jpg'
 import FilterTabs from "../Components/FilterTabs";
 import Scribble from "../Components/Scribble.jsx";
 import BuyTicket from "../Components/BuyTicket.jsx";
+import CountDown from '../Components/CountDown.jsx'
 
 
 
@@ -32,9 +33,9 @@ const EventDetailed = () => {
 
   return (
     <section className='min-h-[85vh]  relative' style={bg} >
-        <div className=' flex-col bg-gradient-to-r from-[#4f0006] via-[#a4010f] to-[#4f0006] z-50 relative flex items-center justify-center px-6 h-34'>
+        <div className=' flex-col bg-gradient-to-r from-[#4f0006] to-[#a4010f] to-[#4f0006] z-50 relative flex items-center justify-center px-6 h-34'>
           <div className='flex flex-col gap-2'>
-<h1 className='white text-[18px] w-full text-center lg:text-[42px] z-90 uppercase chivo font-bold'>LIKOMA ISLAND MUSIC FESTIVAL 2026</h1>
+<h1 className='white text-[28px] w-full text-center lg:text-[52px] z-90 uppercase agdasima font-bold'>LIKOMA ISLAND MUSIC FESTIVAL 2026</h1>
 
 </div>
   <img src={noise} alt="Noise" className="absolute  top-0 left-0 w-full h-full object-cover opacity-15 z-10" />
@@ -50,26 +51,32 @@ const EventDetailed = () => {
 
     <div className='w-full flex flex-col lg:flex-row gap-12'>
         <div className='lg:w-[25%] gap-4 relative flex flex-col items-start justify-start'>
+             <div className='flex gap-4 items-center'>
+      
+          
+             <h4 className="text-[#f8b401] line-clamp-1 font-semibold uppercase zalando text-[32px] lg:text-[26px]">Event Starts in.</h4> 
+         </div>
+        <CountDown />
           <div className='flex gap-4 items-center'>
-             <div className='bg-(--primary-color) rounded-sm p-2'>
-            <CalendarDays className='text-[#FFFCED] size-6' />
-            </div>
-                <h4 className="text-[#fffced] line-clamp-1 font-semibold uppercase zalando text-[18px]">30 AUGUST <span className='text-[#ebe6e6]'>2026</span></h4> 
+                               <div className='bg-(--primary-color) rounded-sm p-2'>
+                              <CalendarDays className='text-[#FFFCED] size-5' />
+                              </div>
+                                  <h4 className="text-[#ece9dd] line-clamp-1 font-semibold uppercase zalando text-[14px]">30 AUGUST <span className='text-[#ebe6e6]'>2026</span></h4> 
+          </div>
+          <div className='flex gap-4 items-center'>
+                      <div className='bg-(--primary-color) backdrop-blur-2xl rounded-sm p-2'>
+                           <MapPin className='text-[#fffced] size-5' />
+                      </div>
+                    
+                       <h4 className="text-[#f8b401] line-clamp-1 font-semibold uppercase zalando text-[14px]">AURO LOUNGE, LILONGWE</h4> 
           </div>
           
-           <div className='flex gap-4 items-center'>
-            <div className='bg-(--primary-color) backdrop-blur-2xl rounded-sm p-2'>
-                 <MapPin className='text-[#fffced] size-6' />
-            </div>
-          
-             <h4 className="text-[#f8b401] line-clamp-1 font-semibold uppercase zalando text-[16px]">AURO LOUNGE, LILONGWE</h4> 
-         </div>
+        
              <Scribble color="#d2691e" className='absolute size-8 bottom-0 right-0'/>
-             
-
+            
         </div>
 
-        <div className='lg:w-[35%]'>
+        <div className='lg:w-[35%] border-[#fffced] border-4 outline-4 outline-[#f8b401] ' >
              
                 <div className='h-130 w-full'>
                 <img src={Gwamba_concert} className='size-full grayscale object-cover ' />
@@ -77,17 +84,19 @@ const EventDetailed = () => {
                 </div>
         </div>
 
-        <div className='lg:w-[40%] flex flex-col  lg:flex-row lg:gap-12 lg:items-end justify-start'>
-            <div className='flex lg:flex-row flex-col items-center justify-between gap-4 lg:gap-12 px-6 py-2 '>
+        <div className='relative lg:w-[40%] flex flex-col w-full  lg:flex-row lg:gap-12 lg:items-end justify-start'>
+          
+         <Scribble color="#d2691e" className='absolute size-8 top-0 left-0'/>
+            <div className='flex lg:flex-row flex-col items-center w-full justify-between gap-4 lg:gap-6 px-6 py-2 '>
               
-           <div className='flex bg-(--primary-color) px-4 py-2 items-center gap-4'>
+           <div className='flex bg-gradient-to-r from-[#4f0006] to-[#a4010f] to-[#4f0006] w-full px-4 py-2 items-center gap-4'>
             <Info className='text-[#fffced] size-7' />
          <h4 className="text-[#fffced] line-clamp-1 font-bold uppercase zalando text-[14px]">
             About Event
           </h4> 
              </div>
             
-              <div className='flex bg-(--primary-color) px-4 py-2 items-center gap-4'>
+              <div className='flex bg-gradient-to-r from-[#4f0006] to-[#a4010f]  w-full hover:bg-(--primary-color)/80 px-4 py-2 items-center gap-4'>
             <BuyTicket size={28} color='#fffced' className='text-[]' />
           
        <h4 className="text-[#fffced] line-clamp-1 font-bold uppercase zalando text-[14px]">
