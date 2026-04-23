@@ -6,7 +6,9 @@ import noise from '../assets/Images/Noise.png'
 import Gwamba_concert from '../assets/Images/GwambaConcert.jpg'
 import hero1 from '../assets/Images/GwambaConcert.jpg'
 import Zeze_concert from '../assets/Images/ZezeConcert.jpg'
+import Dali_wonga from '../assets/Images/Daliwonga.jpg'
 import Tay_concert from '../assets/Images/TayGrin_concert.jpg'
+import Month_end_shutdown from '../assets/Images/MonthEndSD.jpg'
 import lines from '../assets/Images/Lines.png'
 import Lulu_legacy from '../assets/Images/Lulu_legacy.jpg'
 import Take_over from '../assets/Images/Take_over.jpg'
@@ -20,6 +22,8 @@ const Events_data = [
     id:1,
     title: 'Gwamba & Ruger',
     description: 'A minimal, responsive portfolio with custom animations and glassmorphism.',
+    date:'sat, 1st August 2026',
+    location:'Lilongwe, Malawi',
     Category:"Concert",
     link: '#',
     image: Gwamba_concert
@@ -43,11 +47,11 @@ const Events_data = [
 
     {
         id:4,
-    title: 'Marste Memorial Show 2026',
+    title: 'Daliwonga live in Malawi',
     description: 'Analytics dashboard with cards, charts, and dark/light themes.',
      Category:"Music",
     link: '#',
-    image: Lulu_legacy
+    image: Dali_wonga
   },
 
       {
@@ -61,11 +65,13 @@ const Events_data = [
   
      {
         id:6,
-    title: 'Machenji_hero',
+    title: 'Monthend Shutdown',
     description: 'Analytics dashboard with cards, charts, and dark/light themes.',
+    date:'Sat, 27 April 2026',
+    location:'The RoadTrip, After Nguludi Turn-off',
     Category:"Music",
     link: '#',
-    image: Machenji_hero
+    image: Month_end_shutdown
   },
 
 ];
@@ -128,7 +134,7 @@ selectedCategory === "All"
 
        <div className="flex  flex-col mt-18  items-start  justify-center space-y-6 ">
         <div className='bg-[#a4010f] px-4 py-4'>
-            <motion.h1 className="text-[16px] tracking-[10px] text-[#fffced]  font-bold text-center leading-[16px]  lg:text-left lg:text-[18px] lg:leading-[14px] chivo uppercase"
+            <motion.h1 className="text-[16px] tracking-[6px] text-[#fffced]  font-bold text-center leading-[16px]  lg:text-left lg:text-[18px] lg:leading-[14px] chivo uppercase"
              initial={{ opacity: 0, x: -37 }}
              animate={{ opacity: 1, x: 0 }}
              transition={{ delay: 0.5, ease: "easeOut" }}
@@ -165,7 +171,7 @@ setSelectedOption={setSelectedCategory}
       <div key={event.id} className="group rounded-sm flex flex-col lg:flex-row gap-6 lg:gap-12 relative">
         <div className='absolute inset-0 size-24 bg-(--primary-color)'></div>
 
-        <div className="h-[330px] lg:w-[40%]   relative">
+        <div className="h-[300px] lg:w-[40%]   relative">
           <img
             src={event.image}
             alt={event.title}
@@ -177,7 +183,7 @@ setSelectedOption={setSelectedCategory}
             alt="noise"
             className="absolute rounded-sm inset-0 size-full mix-blend-multiply opacity-40 object-cover"
           />
-          <div className='hidden  gap-4 group-hover:flex absolute z-20 bottom-0 -0 p-4 bg-black/50 text-white rounded-tl-sm'>
+          <div className='hidden transition-all duration-470  gap-4 group-hover:flex absolute z-20 bottom-4 right-4 px-4 py-2 bg-black/50 text-white rounded-full'>
             <Download />
             <Heart />
 
@@ -192,21 +198,19 @@ setSelectedOption={setSelectedCategory}
             viewport={{once:true}}
          className="flex relative items-start flex-col gap-4 lg:w-[40%] justify-start z-50">
              <div className="absolute bottom-0 rounded-sm size-34 bg-gradient-to-t from-[#9aae02]/50 blur-xl opacity-20 via-[#a4010f]/20 to-transparent transition-all duration-500 bg-blend-multiply z-10 "></div>
-          <motion.h4
-          variants={itemVariants}
-          className="text-[#ece9dd] font-bold line-clamp-1 capitalize zalando lg:text-[32px] z-50">
+          <motion.h4 variants={itemVariants} className="text-[#ece9dd] font-bold line-clamp-1 capitalize  lg:text-[36px] z-50">
             {event.title}
           </motion.h4>
             <div className='flex flex-col gap-2 items-start z-50'>
-                          <motion.h4 variants={itemVariants} className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">Fri, 30 Aug <span className='text-[#ebe6e6]'>2026</span></motion.h4> 
-                           <motion.h4 variants={itemVariants} className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">Auro Lounge, Lilongwe</motion.h4> 
-                            <motion.h4 variants={itemVariants}  className="text-[#f8b401] line-clamp-1 font-light capitalize zalando text-[14px]">Tickets from <span className='font-semibold'>40K</span> </motion.h4> 
+                  <motion.h4 variants={itemVariants} className=" text-[#f8b401] line-clamp-1 font-semibold capitalize zalando text-[14px]">{event.date}</motion.h4> 
+                  <motion.h4 variants={itemVariants} className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">{event.location}</motion.h4> 
+                  <motion.h4 variants={itemVariants}  className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">Tickets from <span className='font-semibold'>40K</span> </motion.h4> 
             </div>
             <div className='bg-[#fffced]/40 px-4 py-2 z-50 rounded-full'>
-              <p className='text-[12px] white font-light'>Tickets Available</p>
+              <p className='text-[12px] white font-light'>Multiple Ticket Types Available</p>
             </div>
        
-             <img src={lines} className='absolute  inset-0  size-full z-0 opacity-20' />
+             <img src={lines} className='absolute bg-amber-400 hidden  bg-mix-blend-multiply inset-0  size-full z-0 opacity-20' />
             <Scribble color="#d2691e" className='absolute size-8 bottom-16 left-50 lg:bottom-0 lg:left-0'/>
          
         </motion.div>
@@ -223,9 +227,7 @@ setSelectedOption={setSelectedCategory}
                   
                  </motion.div>
        
-<div className='rounded-sm   flex items-center w-full p-4 justify-between'>
- <p className='zalando hidden text-left text-[16px] lg:w-[530px] z-50 text-[#a49f8c]'>View<span className='font-bold text-(--primary-color)'> Event Details</span> for more and buy your tickets.</p>
-</div>
+
 
 
 </div>

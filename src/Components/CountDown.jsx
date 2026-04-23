@@ -20,26 +20,26 @@ export default function CountDown() {
   const seconds = Math.floor((timeLeft / 1000) % 60);
 
   return (
-    <div className="flex gap-6 text-white text-center">
+    <div className="flex gap-6 bg-[#fffced]/5 shadow-2xl bg-blend-multiply border border-[#fffced]/10 px-4 py-2 backdrop-blur-2xl  text-white text-center">
       
       <div>
-        <p className="text-[24px] zalando font-bold">{days}</p>
-        <p className="text-[24px] agdasima tracking-wider text-[#c1c3b7] uppercase">Days</p>
+        <p className="text-[24px] text-[#fffced] zalando font-bold">{days}</p>
+        <p className="text-[18px] chivo tracking-wider text-[#c1c3b7] uppercase">Days</p>
       </div>
 
       <div>
-          <p className="text-[24px] zalando font-bold">{hours}</p>
-        <p className="text-[24px] text-[#c1c3b7]  agdasima uppercase">Hours</p>
+          <p className="text-[24px] text-[#fffced] zalando font-bold">{hours}</p>
+        <p className="text-[18px] text-[#c1c3b7]  chivo uppercase">Hours</p>
       </div>
 
       <div>
-     <p className="text-[24px] zalando font-bold">{minutes}</p>
-        <p className="text-[24px] text-[#c1c3b7]  agdasima uppercase">Minutes</p>
+     <p className="text-[24px] text-[#fffced] zalando font-bold">{minutes}</p>
+        <p className="text-[18px] text-[#c1c3b7]  chivo uppercase">Minutes</p>
       </div>
 
       <div>
-         <p className="text-[24px] zalando font-bold">{seconds}</p>
-        <p className="text-[24px] text-[#c1c3b7]  agdasima uppercase">Seconds</p>
+         <p className="text-[24px] zalando text-[#fffced] font-bold">{seconds}</p>
+        <p className="text-[18px] text-[#c1c3b7]  chivo uppercase">Seconds</p>
       </div>
 
     </div>
