@@ -29,7 +29,8 @@
 
 :root{
   --primary-color:#a4010f;
-  --text-color: #4A4A4A;
+  --secondary-color:#f8b401;
+  --text-color: #ece9dd;
   --text-white:#fffced;
   --font-zalando: 'Zalando Sans Expanded', sans-serif;
     --font-geologica: 'Geologica', sans-serif;

@@ -33,6 +33,8 @@ const Events_data = [
     title: 'Zeze_concert',
     description: 'I transformed raw data into actionable insights that supported informed business decisions',
       Category:"Trending",
+      date:'Sat, 27 April 2026',
+    location:'The RoadTrip, After Nguludi Turn-off',
     link: '#',
     image: Zeze_concert
   },
@@ -41,6 +43,8 @@ const Events_data = [
     title: 'Likoma Island Music Festival 2026',
     description: 'Analytics dashboard with cards, charts, and dark/light themes.',
       Category:"Music",
+      date:'Sat, 27 April 2026',
+    location:'The RoadTrip, After Nguludi Turn-off',
     link: '#',
     image: Tay_concert
   },
@@ -50,6 +54,8 @@ const Events_data = [
     title: 'Daliwonga live in Malawi',
     description: 'Analytics dashboard with cards, charts, and dark/light themes.',
      Category:"Music",
+     date:'Sat, 27 April 2026',
+    location:'The RoadTrip, After Nguludi Turn-off',
     link: '#',
     image: Dali_wonga
   },
@@ -171,7 +177,7 @@ setSelectedOption={setSelectedCategory}
       <div key={event.id} className="group rounded-sm flex flex-col lg:flex-row gap-6 lg:gap-12 relative">
         <div className='absolute inset-0 size-24 bg-(--primary-color)'></div>
 
-        <div className="h-[300px] lg:w-[40%]   relative">
+        <div className="lg:h-[300px] h-[220px]  lg:w-[40%]   relative">
           <img
             src={event.image}
             alt={event.title}
@@ -184,8 +190,8 @@ setSelectedOption={setSelectedCategory}
             className="absolute rounded-sm inset-0 size-full mix-blend-multiply opacity-40 object-cover"
           />
           <div className='hidden transition-all duration-470  gap-4 group-hover:flex absolute z-20 bottom-4 right-4 px-4 py-2 bg-black/50 text-white rounded-full'>
-            <Download />
-            <Heart />
+            <Download size size={24} />
+            <Heart size size={24}  />
 
           </div>
           <div className="absolute rounded-sm inset-0 group-hover:bg-gradient-to-t from-[#4f0006] via-[#a4010f]/40 to-transparent transition-all duration-500 bg-blend-multiply z-10 size-full"></div>
@@ -198,7 +204,7 @@ setSelectedOption={setSelectedCategory}
             viewport={{once:true}}
          className="flex relative items-start flex-col gap-4 lg:w-[40%] justify-start z-50">
              <div className="absolute bottom-0 rounded-sm size-34 bg-gradient-to-t from-[#9aae02]/50 blur-xl opacity-20 via-[#a4010f]/20 to-transparent transition-all duration-500 bg-blend-multiply z-10 "></div>
-          <motion.h4 variants={itemVariants} className="text-[#ece9dd] font-bold line-clamp-1 capitalize  lg:text-[36px] z-50">
+          <motion.h4 variants={itemVariants} className="text-[#ece9dd] text-[26px] font-bold line-clamp-1 capitalize  lg:text-[36px] z-50">
             {event.title}
           </motion.h4>
             <div className='flex flex-col gap-2 items-start z-50'>
@@ -206,12 +212,14 @@ setSelectedOption={setSelectedCategory}
                   <motion.h4 variants={itemVariants} className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">{event.location}</motion.h4> 
                   <motion.h4 variants={itemVariants}  className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">Tickets from <span className='font-semibold'>40K</span> </motion.h4> 
             </div>
-            <div className='bg-[#fffced]/40 px-4 py-2 z-50 rounded-full'>
+            <div className='border-(--secondary-color)/40 border px-4 py-1 z-50 rounded-full'>
               <p className='text-[12px] white font-light'>Multiple Ticket Types Available</p>
+              
             </div>
+            <p>Sponsored by <span className='font-semibold'>Machenji</span></p>
        
              <img src={lines} className='absolute bg-amber-400 hidden  bg-mix-blend-multiply inset-0  size-full z-0 opacity-20' />
-            <Scribble color="#d2691e" className='absolute size-8 bottom-16 left-50 lg:bottom-0 lg:left-0'/>
+            <Scribble color="#d2691e" className='absolute size-8 bottom-5 left-60 lg:bottom-0 lg:left-0'/>
          
         </motion.div>
 
@@ -220,7 +228,7 @@ setSelectedOption={setSelectedCategory}
                    <span>
                      Event Details
                    </span>
-                   <div className='flex relative group items-center overflow-hidden  justify-center bg-[#fffced] p-4'>
+                   <div className='flex relative  items-center overflow-hidden  justify-center bg-[#fffced] p-4'>
                      <ArrowRight className='absolute  size-5 transform  transition-all duration-490  group-hover:translate-x-10 text-(--primary-color)' />
                      <ArrowRight className='absolute  size-5 transform -translate-x-10 opacity-0  transition-all duration-600 group-hover:opacity-100  group-hover:translate-x-0 text-(--primary-color)' />
                    </div>

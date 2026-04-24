@@ -12,6 +12,27 @@ import hero1 from '../assets/Images/Hero1.jpg'
 
 const LandingPage = () => {
 
+   const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+      staggerChildren: 0.5,
+      delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 120 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.55, ease: "easeInOut" }
+    },
+  };
+
+
   const bg = {
     backgroundImage: `url(${Machenji_hero })`,
     backgroundSize: 'cover',
@@ -34,18 +55,21 @@ const LandingPage = () => {
            
     <div className="lg:px-22 px-6 z-50">
 
-       <div className="flex  flex-col  items-start  justify-center space-y-6 ">
-            <motion.h1 className="text-[14px] tracking-[10px] text-[#fffced] font-bold text-center leading-[16px] agdasima  lg:text-left lg:text-[12px] lg:leading-[14px]  uppercase"
-             initial={{ opacity: 0, x: -37 }}
-             animate={{ opacity: 1, x: 0 }}
-             transition={{ delay: 0.5, ease: "easeOut" }}
+       <motion.div
+        variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{once:true}}
+       
+       className="flex  flex-col  items-start  justify-center space-y-6 ">
+            <motion.h1 variants={itemVariants} className="text-[14px] tracking-[10px] text-[#fffced] font-bold text-center leading-[16px] agdasima  lg:text-left lg:text-[12px] lg:leading-[14px]  uppercase"
             >
                Visit Machenji for
             </motion.h1>
 
          
                     
-                    <h1 className="text-[48px] z-50 leading-[48px] text-left text-[#fffced]  zalando Capitalize font-semibold  mt-2  lg:text-[58px] lg:leading-[58px]  lg:max-w-full"> <span className='text-[#e20003]'>Seamless</span><br />Event Hosting</h1>
+                    <motion.h1 variants={itemVariants} className="text-[48px] z-50 leading-[48px] text-left text-[#fffced]  zalando Capitalize font-semibold  mt-2  lg:text-[58px] lg:leading-[58px]  lg:max-w-full"> <span className='text-[#e20003]'>Seamless</span><br />Event Hosting</motion.h1>
                     <p className=' text-left text-[18px] lg:w-[530px] z-50 text-[#a49f8c]'>Discover and Book Events Across Malawi </p>
              
                  <div className="relative mt-6" >
@@ -63,7 +87,7 @@ const LandingPage = () => {
          
       
    
-       </div>
+       </motion.div>
        
     
       
