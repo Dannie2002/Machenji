@@ -7,7 +7,7 @@ import noise from '../assets/Images/Noise.png'
 import Yo_fans from '../assets/Images/Yo_fans.jpg'
 import hero1 from '../assets/Images/GwambaConcert.jpg'
 import Zeze_concert from '../assets/Images/ZezeConcert.jpg'
-import { Search, Ticket, ShoppingCart, ChevronDown, ChevronLeft, CalendarDays } from 'lucide-react'
+import { Search, Ticket, ShoppingCart, ChevronDown, ChevronLeft, CalendarDays,Plus } from 'lucide-react'
 import D_j from '../assets/Images/Fans_show.jpg'
 import FilterTabs from "../Components/FilterTabs";
 import Scribble from "../Components/Scribble.jsx";
@@ -84,7 +84,7 @@ const toggleAccordion = (index) => {
     <section className='min-h-[95vh] relative overflow-hidden' style={bg} >
              <img src={noise} alt="Noise" className="absolute  top-0 left-0 w-full h-full object-cover opacity-40 z-10" />
                     
-                        <div className="absolute   z-40 inset-0 bg-gradient-to-b from-(--primary-color)/75 via-[#0b0b0d]/97  to-[#161819] opacity-100"></div>
+                        <div className="absolute   z-40 inset-0 bg-gradient-to-b from-(--primary-color)/75 via-[#161819]/97  to-[#161819] opacity-100"></div>
     
        
 
@@ -96,13 +96,13 @@ const toggleAccordion = (index) => {
             <div className='lg:w-[30%] relative'>
             <Scribble color="#d2691e" className='absolute size-8 bottom-0 right-0'/>   
             <div className='w-full'>
-            <motion.h4  className="text-[#ece9dd] wrap-break-word font-bold  capitalize zalando lg:leading-[32px] lg:text-[28px] z-50">
+            <motion.h4  className="text-[#ece9dd] wrap-break-word font-bold text-[24px]  capitalize zalando lg:leading-[32px] lg:text-[28px] z-50">
             <span className='text-(--secondary-color)'>The Easiest </span> Way To Host & Sell Event Tickets In Malawi
             </motion.h4>
                 <div className=' mt-6  flex flex-col gap-4 items-start w-full  justify-between'>
            <p className='zalando text-left text-[14px] font-light z-50 text-[#d9d6cc] overflow-hidden'>Take the guesswork out of accepting payments and receiving payouts with tools available for all organizers.</p>
                <div className='flex border border-[#fffced]/90 mt-6 px-4 py-2 items-center gap-4'>
-           
+             <Plus className='white font-bold size-4'/>
             <h4 className="text-[#fffced] font-bold uppercase chivo text-[14px]">
             Create your Event
           </h4> 
@@ -118,14 +118,14 @@ const toggleAccordion = (index) => {
             viewport={{once:true}} className='lg:w-[30%] flex w-full flex-col lg:mt-0 mt-6 justify-start gap-6 items-start'>
         {WhyUs.map((item,index) => (
         
-              <motion.div variants={itemVariants} key={item.id} id={item.id} className='px-4 py-2 w-full hover:bg-(--text-color)/20 hover:border-(--text-color)/40 border border-[#fffced]/40'>
+              <motion.div variants={itemVariants} key={item.id} id={item.id} className='px-4 py-2 w-full hover:bg-[#272626]/60 hover:border-(--text-color)/40 border border-[#fffced]/40'>
 
     <div 
       onClick={() => toggleAccordion(index)}
       className='flex items-center justify-between cursor-pointer'
     >
 
-      <motion.h4 className="white wrap-break-word font-bold uppercase zalando lg:leading-[38px] lg:text-[14px] z-50">
+      <motion.h4 className="white wrap-break-word font-bold text-[14px] uppercase zalando lg:leading-[38px] lg:text-[14px] z-50">
         {item.point}
       </motion.h4>
 
@@ -174,15 +174,15 @@ const toggleAccordion = (index) => {
               
     
     <ScrollVelocityRow baseVelocity={-8} className='lg:p-0 '>
-        <div className='flex px-6 items-center justify-center gap-6 min-w-[600px]' >
-        <h4 className='uppercase zalando font-bold text-[#fffced]  text-[24px]'><span className='text-(--secondary-color)'>112+ <span className='text-[#c3b5b5]'> Event </span> Hosted</span></h4>
+        <div className='flex px-6 items-center justify-center gap-6 min-w-[400px]' >
+        <h4 className='uppercase zalando font-bold text-[#fffced]  text-[24px]'><span className='text-(--text-color)'>112+ <span className='text-[#c3b5b5]'> Event </span> Hosted</span></h4>
     
         </div>
             <BuyTicket color='#f8b401' size={38} className="text-(--primary-color)"/>
     </ScrollVelocityRow>
      <ScrollVelocityRow baseVelocity={2} className='lg:p-0 '>
         <div className='flex px-6 items-center justify-center gap-6 min-w-[400px]' >
-        <h4 className='uppercase zalando font-bold text-[#fffced]  text-[24px]'><span className='text-(--secondary-color)'>6012+ <span className='text-[#c3b5b5]'> Tickets </span> Sold</span></h4>
+        <h4 className='uppercase zalando font-bold text-[#fffced]  text-[24px]'><span className='text-(--text-color)'>6012+ <span className='text-[#c3b5b5]'> Tickets </span> Sold</span></h4>
     
         </div>
             <BuyTicket color='#f8b401' size={38} className="text-(--primary-color)"/>

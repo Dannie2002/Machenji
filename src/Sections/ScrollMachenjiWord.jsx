@@ -6,7 +6,7 @@ import BuyTicket from "../Components/BuyTicket.jsx";
 
 const ScrollMachenjiWord = () => {
   return (
-   <ScrollVelocityContainer className='bg-[#121111]'>
+   <ScrollVelocityContainer className='bg-[#161819]'>
               
     
     <ScrollVelocityRow baseVelocity={-8} className='lg:p-0 '>

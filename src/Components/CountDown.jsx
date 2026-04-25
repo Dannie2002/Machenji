@@ -20,7 +20,7 @@ export default function CountDown() {
   const seconds = Math.floor((timeLeft / 1000) % 60);
 
   return (
-    <div className="flex gap-6 bg-[#fffced]/5 rounded-sm shadow-2xl bg-blend-multiply border border-[#fffced]/15 px-4 py-2 backdrop-blur-2xl  text-white text-center">
+    <div className="flex gap-6 shadow-[6px_6px_18px_rgba(255,255,255,0.2)] bg-[#fffced]/10 rounded-sm shadow-2xl bg-blend-multiply border border-[#fffced]/20 px-4 py-2 backdrop-blur-3xl  text-white text-center">
       
       <div>
         <p className="text-[24px] text-[#fffced] zalando font-bold">{days}</p>
