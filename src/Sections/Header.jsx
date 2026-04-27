@@ -29,7 +29,7 @@ const Header = () => {
           <span className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ease-in-out ${navOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1'}`}></span>
         </button>
 
-        <motion.div className='flex items-center gap-4 group relative px-4 cursor-pointer rounded-sm py-2.5 text-[#fffced] agdasima uppercase font-bold transition-all duration-300 bg-(--primary-color) border border-none  text-[18px]'>
+        <motion.div className='flex items-center gap-4 group relative px-4 cursor-pointer rounded-sm py-2 text-[#fffced] chivo uppercase font-bold transition-all duration-300 bg-(--primary-color) border border-none  text-[16px]'>
           <span>
             Host An Event
           </span>

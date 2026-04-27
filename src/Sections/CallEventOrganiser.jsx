@@ -90,13 +90,14 @@ const toggleAccordion = (index) => {
 
                 
     <div className="Section_wrapper relative z-50">
+      <h4 className='text-8xl text-grey agdasima uppercase font-black'>HOST EASY.EARN MORE.</h4>
 
     
-        <div className='flex lg:flex-row flex-col w-full lg:gap-12'>
+        <div className='flex lg:flex-row mt-12 flex-col w-full lg:gap-8'>
             <div className='lg:w-[30%] relative'>
             <Scribble color="#d2691e" className='absolute size-8 bottom-0 right-0'/>   
             <div className='w-full'>
-            <motion.h4  className="text-[#ece9dd] wrap-break-word font-bold text-[24px]  capitalize zalando lg:leading-[32px] lg:text-[28px] z-50">
+            <motion.h4  className="text-[#ece9dd] wrap-break-word font-semibold text-[24px]  capitalize zalando lg:leading-[28px] lg:text-[24px] z-50">
             <span className='text-(--secondary-color)'>The Easiest </span> Way To Host & Sell Event Tickets In Malawi
             </motion.h4>
                 <div className=' mt-6  flex flex-col gap-4 items-start w-full  justify-between'>
@@ -112,10 +113,18 @@ const toggleAccordion = (index) => {
             </div>
             </div>
 
-        <motion.div  variants={containerVariants}
+       
+
+        <div className='lg:w-[70%] mt-6 lg:mt-0 relavite border-[#fffced]/80 border-2'>
+
+             
+
+        <div className=' lg:h-[480px] relative  shadow-[6px_16px_18px_rgba(255,255,255,0.2)] w-full'>
+        <img src={ D_j}  className='w-full group-hover:scale-110 transition-all duration-2200 ease-in-out h-full rounded-[4px] object-cover grayscale'/>
+         <motion.div  variants={containerVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{once:true}} className='lg:w-[30%] flex w-full flex-col lg:mt-0 mt-6 justify-start gap-6 items-start'>
+            viewport={{once:true}} className='absolute lg:w-[70%] w-full flex w-full bottom-8 left-8 flex-col lg:mt-0 mt-6 justify-start gap-6 items-start'>
         {WhyUs.map((item,index) => (
         
               <motion.div variants={itemVariants} key={item.id} id={item.id} className='px-4 py-2 w-full hover:bg-[#272626]/60 hover:border-(--text-color)/40 border border-[#fffced]/40'>
@@ -131,7 +140,7 @@ const toggleAccordion = (index) => {
 
       <motion.div
         animate={{ rotate: activeIndex === index ? 180 : 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.3 }} className='z-50'
       >
         <ChevronDown size={26} color="#f8b401" />
       </motion.div>
@@ -155,11 +164,8 @@ const toggleAccordion = (index) => {
               </motion.div>
 
                 ))}
-                </motion.div>
-
-        <div className='lg:w-[40%] mt-6 lg:mt-0  border-[#fffced]/80 border-4'>
-        <div className=' lg:h-[480px]  shadow-[6px_16px_18px_rgba(255,255,255,0.2)] w-full'>
-        <img src={ D_j}  className='w-full group-hover:scale-110 transition-all duration-2200 ease-in-out h-full rounded-[4px] object-cover grayscale'/>
+        </motion.div>
+         <div className="absolute   z-0 inset-0 bg-gradient-to-t from-(--primary-color)/70 via-[#0b0b0d]/97  to-[#161619] opacity-70"></div>
         </div>
             </div>
 
@@ -170,7 +176,7 @@ const toggleAccordion = (index) => {
 
         </div>
 
-               <ScrollVelocityContainer className='z-50 mt-6 relative'>
+               <ScrollVelocityContainer className='z-50 mt-12 relative'>
               
     
     <ScrollVelocityRow baseVelocity={-8} className='lg:p-0 '>

@@ -108,6 +108,8 @@ const Events = () => {
 
 
 
+
+
 const [selectedCategory, setSelectedCategory] = useState("All");
 const categories = [...new Set(Events_data.map(event => event.Category))];
 const filteredEvents =
@@ -131,7 +133,7 @@ selectedCategory === "All"
                
                <img src={noise} alt="Noise" className="absolute top-0 left-0 w-full h-full object-cover opacity-40 z-10" />
             
-                <div className="absolute   z-40 inset-0 bg-gradient-to-b from-[#0b0b0d]/90 via-[#121111]  to-[#121111] opacity-100"></div>
+                <div className="absolute   z-40 inset-0 bg-gradient-to-b from-[#0b0b0d]/90 via-[#161619]  to-[#161619] opacity-100"></div>
 
              
             
@@ -139,8 +141,8 @@ selectedCategory === "All"
     <div className="Section_wrapper relative z-50">
 
        <div className="flex  flex-col mt-18  items-start  justify-center space-y-6 ">
-        <div className='bg-[#a4010f] px-4 py-4'>
-            <motion.h1 className="text-[16px] tracking-[6px] text-[#fffced]  font-bold text-center leading-[16px]  lg:text-left lg:text-[18px] lg:leading-[14px] chivo uppercase"
+        <div className='bg-[#a4010f] px-4 py-2'>
+            <motion.h1 className="text_button tracking-widest"
              initial={{ opacity: 0, x: -37 }}
              animate={{ opacity: 1, x: 0 }}
              transition={{ delay: 0.5, ease: "easeOut" }}
@@ -154,7 +156,7 @@ selectedCategory === "All"
       initial={{ x: -200, opacity: 0 }}
     animate={{ x: 0, opacity: 1 }}
     transition={{ duration: 0.15, ease: "easeOut" }}
-       className="text-[24px] z-50 leading-[28px] text-left  text-[#c3b5b5]  zalando Capitalize font-light  mt-2  lg:text-[22px] lg:leading-[22px]  lg:max-w-full"> <span className='text-[#fffced]'>Find amazing</span> events</motion.h1>
+       className="text-[24px] z-50 leading-[28px] text-left  text-[#c3b5b5]  zalando Capitalize font-light  mt-2  lg:text-[18px] lg:leading-[22px]  lg:max-w-full"> <span className='text-[#fffced]'>Find amazing</span> events</motion.h1>
                     
       <FilterTabs
 label="Filter By Category:"
@@ -171,11 +173,11 @@ setSelectedOption={setSelectedCategory}
     animate={{ x: 0, opacity: 1 }}
     exit={{ x: -200, opacity: 0 }}
     transition={{ duration: 0.15, ease: "easeOut"}}
-    className="Grid_4 lg:grid-cols-1"
+    className="Grid_4 lg:grid-cols-2 gap-6"
   >
     {filteredEvents.map((event) => (
-      <div key={event.id} className="group rounded-sm flex flex-col lg:flex-row gap-6 lg:gap-12 relative">
-        <div className='absolute inset-0 size-24 bg-(--primary-color)'></div>
+      <div key={event.id} className="group rounded-sm border hover:bg-[#272626] border-(--text-color)/40 flex flex-col lg:flex-row gap-2 lg:gap-4 relative">
+        
 
         <div className="lg:h-[300px] h-[220px]  lg:w-[40%]   relative">
           <img
@@ -202,43 +204,43 @@ setSelectedOption={setSelectedCategory}
             initial="hidden"
             whileInView="show"
             viewport={{once:true}}
-         className="flex relative items-start flex-col gap-4 lg:w-[40%] justify-start z-50">
+         className="flex relative items-start flex-col p-4 lg:p-4 gap-2 lg:w-[60%] justify-start z-50">
              <div className="absolute bottom-0 rounded-sm size-34 bg-gradient-to-t from-[#9aae02]/50 blur-xl opacity-20 via-[#a4010f]/20 to-transparent transition-all duration-500 bg-blend-multiply z-10 "></div>
-          <motion.h4 variants={itemVariants} className="text-[#ece9dd] text-[26px] font-bold line-clamp-1 capitalize  lg:text-[36px] z-50">
+          <motion.h4 variants={itemVariants} className="text-grey text-[16px] zalando uppercase font-bold capitalize lg:text-[20px] z-50">
             {event.title}
           </motion.h4>
-            <div className='flex flex-col gap-2 items-start z-50'>
-                  <motion.h4 variants={itemVariants} className=" text-[#f8b401] line-clamp-1 font-semibold capitalize zalando text-[14px]">{event.date}</motion.h4> 
-                  <motion.h4 variants={itemVariants} className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">{event.location}</motion.h4> 
-                  <motion.h4 variants={itemVariants}  className="text-[#ece9dd] line-clamp-1 font-light capitalize zalando text-[14px]">Tickets from <span className='font-semibold'>40K</span> </motion.h4> 
+            <div className='flex flex-col items-start z-50'>
+                    <div className='flex items-center flex-row gap-4'>
+                     <h4 className='text-grey zalando  text-[12px]'>Sat, 1st August 2026</h4>
+                     <span className='text-grey'>|</span>
+                     <h4 className='text-grey zalando text-[12px]'>Lilongwe, Malawi</h4>
+                    </div>
+                 
             </div>
-            <div className='border-(--secondary-color)/40 border px-4 py-1 z-50 rounded-full'>
-              <p className='text-[12px] white font-light'>Multiple Ticket Types Available</p>
-              
+            <div className='border-(--secondary-color)/40 border gap-2 flex px-4 py-1 z-50 rounded-sm'>
+              <p className='text-[12px] white font-light'>Tickets Available</p>
+               <h4 className="text-[#f8b401] font-light capitalize zalando text-[12px]">from <span className='font-semibold'>40K</span> </h4> 
+   
             </div>
-            <p>Sponsored by <span className='font-semibold'>Machenji</span></p>
+            <p className='  font-light text-grey capitalize zalando text-[12px]'>Sponsored by <span className='font-semibold'>Landrord Entertainment</span></p>
+
+                <motion.div className='flex items-center mt-4 lg:mt-6 gap-2 group relative px-4 cursor-pointer rounded-sm py-2 text-[#fffced] chivo uppercase font-bold transition-all duration-300 bg-(--primary-color) border border-none  '>
+                      <h4 className='text-[16px] text-[#fffced] chivo uppercase font-bold '>
+                        Get Tickets
+                      </h4>
+                      <div className='flex relative group items-center overflow-hidden  justify-center bg-transparent p-4'>
+                        <ArrowRight className='absolute  size-5 transform  transition-all duration-490  group-hover:translate-x-10 text-(--text-color)' />
+                        <ArrowRight className='absolute  size-5 transform -translate-x-10 opacity-0  transition-all duration-600 group-hover:opacity-100  group-hover:translate-x-0 text-(--text-color)' />
+                      </div>
+                     
+                    </motion.div>
        
-             <img src={lines} className='absolute bg-amber-400 hidden  bg-mix-blend-multiply inset-0  size-full z-0 opacity-20' />
+             <img src={lines} className='absolute hidden bg-mix-blend-multiply inset-0  size-full z-0 opacity-20' />
             <Scribble color="#d2691e" className='absolute size-8 bottom-5 left-60 lg:bottom-0 lg:left-0'/>
          
         </motion.div>
 
-       <div className="relative flex lg:w-[20%]  flex-col items-start lg:items-end justify-between ">
-             <motion.div className='flex items-center gap-4 group relative px-4 cursor-pointer  py-2.5 text-[#fffced] agdasima uppercase font-bold hover:bg-(--primary-color)/80 transition-all duration-300 bg-(--primary-color) border border-none  text-[20px]'>
-                   <span>
-                     Event Details
-                   </span>
-                   <div className='flex relative  items-center overflow-hidden  justify-center bg-[#fffced] p-4'>
-                     <ArrowRight className='absolute  size-5 transform  transition-all duration-490  group-hover:translate-x-10 text-(--primary-color)' />
-                     <ArrowRight className='absolute  size-5 transform -translate-x-10 opacity-0  transition-all duration-600 group-hover:opacity-100  group-hover:translate-x-0 text-(--primary-color)' />
-                   </div>
-                  
-                 </motion.div>
-       
 
-
-
-</div>
 
       </div>
     ))}
