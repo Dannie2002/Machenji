@@ -98,15 +98,22 @@ clip-path: polygon(30% 0%, 100% 0, 100% 100%, 100% 50%, 100% 0%, 95% 100%, 0 100
 }
 
 .shadow_red{
-  @apply  shadow-[2px_2px_20px_rgba(248,180,1,0.3)]
+  @apply  shadow-[2px_2px_16px_rgba(255,255,120,0.3)]
 }
-
+.divs_container{
+  @apply flex mt-6 flex-col gap-6 lg:flex-row lg:gap-8 w-full;
+}
 .noise{
   @apply absolute rounded-[14px] z-0 inset-0 mix-blend-overlay opacity-30  size-full object-cover;
 }
  
 .Section_bg{
   @apply bg-[#f8ffef] min-h-screen overflow-hidden;
+}
+
+.text_field{
+  font-family: var(--font-zalando);
+  @apply block w-full outline-1 outline-(--text-color)/15 px-3.5 text-[14px] text-(--text-color) bg-(--text-color)/15 p-2  
 }
 
 .text_button{
