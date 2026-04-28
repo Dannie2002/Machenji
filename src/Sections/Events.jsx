@@ -210,9 +210,9 @@ setSelectedOption={setSelectedCategory}
             {event.title}
           </motion.h4>
             <div className='flex flex-col items-start z-50'>
-                    <div className='flex items-center flex-row gap-4'>
+                    <div className='flex items-start flex-col'>
                      <h4 className='text-grey zalando  text-[12px]'>Sat, 1st August 2026</h4>
-                     <span className='text-grey'>|</span>
+               
                      <h4 className='text-grey zalando text-[12px]'>Lilongwe, Malawi</h4>
                     </div>
                  

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import Machenji_hero from '../assets/Images/MachenjiEvent.jpg'
 import Machenji_ticket from '../assets/Images/MachenjiTicket.png' 
 import AM_logo from '../assets/Images/AirtelMoney_Logo.png'
@@ -86,7 +86,7 @@ const total = ticketCount * selectedTicket.price;
 
   return (
     <section className='min-h-[85vh]  relative' style={bg} >
-        <div className=' flex-col  z-50 relative flex items-center justify-center px-6 h-22 lg:h-34'>
+        <div className=' flex-col  z-50 relative flex items-center justify-center px-6 h-22 lg:h-24'>
           <div className='flex flex-col gap-2'>
 <h1 className='white text-[32px] w-full text-center lg:text-[52px] z-90 uppercase agdasima font-bold'>LANDLORD PAKWAO CONCERT</h1>
 
@@ -103,57 +103,63 @@ const total = ticketCount * selectedTicket.price;
     <div className="Section_wrapper relative z-50">
 
     <div className='w-full flex flex-col lg:flex-row gap-12'>
-        <div className='lg:w-[35%] gap-4 relative flex flex-col items-start justify-start'>
-    
-        
-          <div className='flex gap-4 lg:mt-6 items-center'>
-                               <div className='bg-(--primary-color) border shadow-[6px_2px_18px_rgba(255,255,255,0.2)]  border-[#fffced]/20 rounded-sm p-2'>
-                              <CalendarDays className='text-[#FFFCED] size-5' />
-                              </div>
-                                  <h4 className=" text-[#f8b401] line-clamp-1 font-semibold uppercase zalando text-[14px]">1st AUGUST 2026 . 9PM</h4> 
-          </div>
-          <div className='flex gap-4 items-center'>
-                      <div className='bg-(--primary-color) backdrop-blur-2xl rounded-sm p-2'>
-                           <Location color="#fffced" size={20} />
-                      </div>
-                    
-                       <h4 className="text-[#ece9dd] line-clamp-1 font-semibold uppercase zalando text-[14px]">AURO LOUNGE, LILONGWE</h4> 
-          </div>
-                   <div className='flex gap-4 items-center'>
       
-          
-             <h4 className="text-[#f8b401]  font-bold uppercase chivo text-[24px] lg:text-[26px]">Event Starts in.</h4> 
-         </div>
-         <CountDown className="w-full"/>
-          
-        
-             <Scribble color="#d2691e" className='absolute size-8 bottom-0 right-0'/>
-            
-        </div>
 
-        <div className='lg:w-[35%] group shadow-[6px_6px_18px_rgba(255,255,255,0.2)] border-[#fffced] border-4 outline-4 outline-[#f8b401] ' >
+        <div className='lg:w-[30%] group shadow-[6px_6px_18px_rgba(255,255,255,0.2)] border-[#fffced] border-4 outline-4 outline-[#f8b401] ' >
              
-                <div className='h-[430px] shadow-[6px_6px_18px_rgba(255,255,255,0.2)] w-full'>
-                <img src={Gwamba_concert} className='size-full  grayscale  object-cover ' />
+                <div className='h-[430px] shadow-[6px_6px_18px_rgba(255,255,255,0.2)] w-full overflow-hidden'>
+                <motion.img src={Gwamba_concert}
+                  initial={{ scale: 1 }}
+                        animate={{ scale: 1.08 }}
+                        transition={{
+                          duration: 18,
+                          ease: "easeInOut",
+                          repeat: Infinity,
+                          repeatType: "reverse"
+                        }}
+                className='size-full  grayscale  object-cover ' />
 
                 </div>
         </div>
 
-        <div className='relative lg:w-[40%] flex flex-col w-full   lg:gap-6 lg:items-start lg:justify-between'>
-          <motion.div 
-           variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{once:true}} className='flex w-full flex-col gap-3'>
-         
-            <motion.p variants={itemVariants} className='white capitalize font-bold text-[24px] zalando'>122+ People waiting</motion.p>
-               <motion.p variants={itemVariants} className='white capitalize items-center font-bold text-[12px] flex gap-2 zalando'><span><FireEmoji color="#d2691e"  /></span>few tickets left</motion.p>
-               <motion.div variants={itemVariants} className='w-full mt-6'>
+        <div className='relative lg:w-[70%] flex flex-col w-full   lg:gap-6 lg:items-start lg:justify-between'>
+          <div 
+         className='flex w-full flex-col gap-3'>
+          
+            <div className='flex gap-4 items-center'>
+              <h4 className="text-[#f8b401]  font-bold uppercase chivo text-[18px] lg:text-[22px]">Event Starts in.</h4> 
+            </div>
 
-              
+            <div className='flex gap-6  justify-between items-center  w-full'>
+               <CountDown className="lg:w-1/2"/>
+               <div className='lg:w-1/2 flex border border-(--text-color)/40 rounded-sm p-2 gap-4 items-center w-full' >
                   <div className=''>
-                         <p className='text-grey capitalize text-[14px]'>Standard Tickets</p>
-                    <div className='w-full rounded-full h-[12px]  mt-2 bg-(--primary-color)'>
+                               
+                                    <h4 className=" text-[#f8b401] font-bold uppercase chivo leading-[22px] text-[18px]">1st AUGUST <br /><span className='text-[10px] white'>Friday</span></h4> 
+                   </div>
+                  <div className=''>
+                      <h4 className=" text-[#f8b401] font-bold uppercase chivo leading-[22px] text-[18px]">Aero Longe, Lilongwe <br /><span className='text-[10px] white'>17:00pm</span></h4> 
+                  </div>
+              </div>
+            </div>
+         
+
+       
+
+         <div className='flex gap-4 mt-6 items-center'>
+            <p  className='white capitalize font-semibold text-[12px] zalando'>122+ People waiting</p>
+               <p  className='white capitalize items-center font-semibold text-[12px] flex gap-2 zalando'>few tickets left</p>
+         </div>
+              
+
+              <motion.div variants={itemVariants} className='w-full flex flex-row gap-6 items-center mt-4'>
+                  <div className='w-1/2'>
+                  <div className='flex items-center justify-between'>
+                     <p className='text-grey zalando text-[12px]'>Standard Tickets</p>
+                     <p className='text-(--secondary-color) font-bold zalando text-[12px]'>65% sold</p>
+                  </div>
+                         
+                    <div className='w-full rounded-full h-[12px]   bg-(--primary-color)'>
                        <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: "65%" }}
@@ -162,8 +168,11 @@ const total = ticketCount * selectedTicket.price;
                     </div>    
                   </div>
 
-                     <div className='mt-6'>
-                         <p className='text-grey capitalize text-[14px]'>VIP Tickets</p>
+                     <div className='w-1/2'>
+                          <div className='flex items-center justify-between'>
+                     <p className='text-grey zalando text-[12px]'>  VIP Tickets</p>
+                     <p className='text-(--secondary-color) font-bold zalando text-[12px]'>85% sold</p>
+                  </div>
                     <div className='w-full rounded-full h-[12px]  mt-2 bg-(--primary-color)'>
                        <motion.div
                           initial={{ width: 0 }}
@@ -176,12 +185,12 @@ const total = ticketCount * selectedTicket.price;
                      
                                      
             </motion.div>
-               
+                 
               
-          </motion.div>
+          </div>
           
           
-         <Scribble color="#f8b401" className='absolute size-8 top-0 lg:top-60 right-0 lg:left-0'/>
+
             <div className='flex mt-6 lg:flex-row flex-col items-center w-full justify-start lg:justify-between gap-4 py-2 '>
               
              <div className='flex border  border-[#fffced]/90 w-full px-4 py-2 items-center gap-4'>
@@ -204,7 +213,7 @@ const total = ticketCount * selectedTicket.price;
 
     </div>
     
-    <div className='mt-12'>
+    <div className='mt-12 hidden'>
       <p className='white text-[28px] w-full text-center lg:text-[32px] z-90 uppercase agdasima font-bold'>BUY TICKETS FASTER.</p>
       
       <div className='divs_container'>
@@ -371,10 +380,11 @@ const total = ticketCount * selectedTicket.price;
              
            <div className='mt-6'>
              <div className='flex flex-row items-center gap-6'>
-              <div className='lg:size-20 size-14 relative rounded-full'>
-                <img src={Gwamba_concert} alt="" className='object-cover rounded-full size-full'/>
-                <div className='absolute size-6 rounded-full flex items-center justify-center top-0 right-0 bg-(--primary-color)'>
-                  <h4 className='white zalando font-bold text-[12px]'>{ticketCount}</h4>
+              <div className='lg:size-20  size-14 relative rounded-full '>
+                <motion.img src={Gwamba_concert} alt=""
+                   className='object-cover rounded-full size-full'/>
+                <div className='absolute z-20 size-5 rounded-full flex items-center justify-center top-0 right-0 bg-(--primary-color)'>
+                  <h4 className='white zalando font-bold text-[10px]'>{ticketCount}</h4>
                 </div>
               </div>
 
@@ -384,10 +394,10 @@ const total = ticketCount * selectedTicket.price;
              viewport={{once:true}} className='flex flex-col '>
                 <motion.h4 variants={itemVariants}  className='zalando font-bold uppercase tracking-[6px] white text-[10px]'>Order Summary</motion.h4>
                 <motion.h4 variants={itemVariants} className='text-grey mt-2 zalando text-[12px]'>LANDLORD PAKWAO CONCERT</motion.h4>
-                <div variants={itemVariants} className='flex flex-col lg:flex-row lg:gap-2'>
+                <motion.div variants={itemVariants} className='flex flex-col lg:flex-row lg:gap-2'>
                     <h4 className='text-grey zalando text-[12px]'>Sat, 1st August 2026</h4>
                      <h4 className='text-grey zalando text-[12px]'>Lilongwe, Malawi</h4>
-                </div>
+                </motion.div>
                 <h4 className='zalando text-(--secondary-color) text-[12px]'>{ticketCount} {selectedTicket.name} {ticketCount > 1 ? "Tickets" : "Ticket" } x MK {selectedTicket.price.toLocaleString()}</h4>
                 <h4 className='text-[12px] zalando text-grey'>
                    Payment Method: <span className='font-semibold text-(--secondary-color)'>
@@ -400,36 +410,36 @@ const total = ticketCount * selectedTicket.price;
 
 
 
-          <form action="#" method="POST" className="mt-6">
+                <form action="#" method="POST" className="mt-6">
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div className=''>
                   <label htmlFor="first-name" className="white zalando text-[14px] font-normal">First name:</label>
                   <div className="mt-2 ">
-                    <input id="first-name" type="text" name="first-name" autoComplete="given-name" className="text_field" />
+                    <input id="first-name" type="text" name="first-name" autoComplete="given-name" placeholder="Dannie" className="text_field "  />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="last-name" className="white zalando text-[14px] font-normal">Last name:</label>
+                  <label htmlFor="last-name" className="white zalando text-[14px] placeholder font-normal">Last name:</label>
                    <div className="mt-2 ">
-                    <input id="last-name" type="text" name="last-name" autoComplete="given-name" className="text_field" />
+                    <input id="last-name" type="text" name="last-name" autoComplete="given-name" placeholder="Mankhwazi" className="text_field" />
                   </div>
                 </div>
               
                 <div className="sm:col-span-2">
                   <label htmlFor="email" className="white zalando text-[14px] font-normal">Email:</label>
                     <div className="mt-2 ">
-                    <input id="email" type="email" name="email" autoComplete="given-name" className="text_field" />
+                    <input  id="email" type="email" name="email" autoComplete="given-name" placeholder="danniemankhwazi@gmail.com" className="text_field " />
                   </div>
                 </div>
-             <div>
-              <h4 className='text_button'>PAY VIA {paymentMethod === "airtel" ? "Airtel Money" : "Credit Card"}</h4>
-                  <div className='flex flex-row mt-2 gap-4 items-center justify-start'>
-              <div className=' ' >
-                <SUCUREICON size="6"  color="#ff0000"/>
+             
+             
+                  <div className='flex flex-row  gap-4 items-center justify-start'>
+              <div className='' >
+                <SUCUREICON size="6"  color="#fffced"/>
               </div>
             <h4 className='text-grey capitalize italic zalando  font-light  text-[10px]'>All transactions are secure and encrypted.</h4>
             </div>
-            </div>
+            
 
 
           <div className="sm:col-span-2 border border-(--text-color)/40 p-4 rounded-sm ">
@@ -451,8 +461,10 @@ const total = ticketCount * selectedTicket.price;
                   </label>
 
                   <div className="flex bg-transparent mt-2 border-b border-b-green/20 focus-within:border-green transition-all">
-                    <select className="text_field w-fit">
-                      <option>MW</option>
+                    <select className="text_field bg-(--text-color)/40 w-fit">
+                      <option className='text-[12px] '>MW</option>
+                      <option>US</option>
+                      <option>MZ</option>
                     </select>
 
                     <input
@@ -482,30 +494,30 @@ const total = ticketCount * selectedTicket.price;
                       <input
                         type="text"
                         placeholder="1234 5678 9012 3456"
-                        className="block w-full bg-transparent border-b border-b-(--text-color)/80 px-3.5 py-1.5 text-grey outline-none focus:border-green transition-all"
+                        className="text_field mt-2"
                       />
                     </div>
 
-                    <div className="flex gap-4">
-                      <div className="w-1/2">
+                    <div className="flex flex-col lg:flex-row gap-4">
+                      <div className="lg:w-1/2">
                         <label className="white zalando text-[14px] font-normal">
                           Expiry
                         </label>
                         <input
                           type="text"
                           placeholder="MM/YY"
-                          className="text_field"
+                          className="text_field mt-2"
                         />
                       </div>
 
-                      <div className="w-1/2">
+                      <div className="lg:w-1/2">
                         <label className="white zalando text-[14px] font-normal">
                         Card Code (CVV)
                         </label>
                         <input
                           type="text"
                           placeholder="123"
-                          className="text_field"
+                          className="text_field mt-2"
                         />
                       </div>
                     </div>
@@ -518,15 +530,15 @@ const total = ticketCount * selectedTicket.price;
           </div>
                 
               </div>
-            <div className="mt-12 bg-(--primary-color) rounded-sm">
-              <button type="submit" className="block cursor-pointer text-[18px] w-full rounded-[4px] bg-green px-3.5 py-2.5 text-center text-sm font-bold text-white shadow-sm hover:bg-green/90 transition-all uppercase chivo tracking-wide">PAY MK{total.toLocaleString()}.00</button>
+            <div className="mt-6 bg-(--primary-color) rounded-sm">
+              <button type="submit" className="block cursor-pointer text-[16px] w-full rounded-[4px] bg-green px-3.5 py-2.5 text-center text-sm font-bold text-white shadow-sm hover:bg-green/90 transition-all uppercase chivo tracking-wide">PAY MK{total.toLocaleString()}.00 Via  {paymentMethod === "airtel" ? "Airtel Money" : "Credit Card"}</button>
             </div>
         
     
                 </form>
              
            </div>
-        </div>
+         </div>
 
       </div>
     </div>

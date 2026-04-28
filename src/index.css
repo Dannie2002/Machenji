@@ -113,7 +113,7 @@ clip-path: polygon(30% 0%, 100% 0, 100% 100%, 100% 50%, 100% 0%, 95% 100%, 0 100
 
 .text_field{
   font-family: var(--font-zalando);
-  @apply block w-full outline-1 outline-(--text-color)/15 px-3.5 text-[14px] text-(--text-color) bg-(--text-color)/15 p-2  
+  @apply block w-full placeholder:text-[12px] placeholder:text-(--color-text) outline-1 outline-(--text-color)/15 px-3.5 text-[14px] text-(--text-color) border border-(--text-color)/15 bg-(--text-color)/15 p-2  
 }
 
 .text_button{
