@@ -29,7 +29,7 @@
 
 :root{
   --primary-color:#a4010f;
-  --secondary-color:#f8b401;
+  --secondary-color:#e6ff00;
   --text-color: #ece9dd;
   --text-white:#fffced;
   --font-zalando: 'Zalando Sans Expanded', sans-serif;
@@ -93,12 +93,18 @@ clip-path: polygon(30% 0%, 100% 0, 100% 100%, 100% 50%, 100% 0%, 95% 100%, 0 100
   @apply absolute   z-40 inset-0 bg-gradient-to-b from-(--primary-color)/75 via-[#0b0b0d]/97  to-[#161619] opacity-100 mix-blend-multiply;
 }
 
+.text_popular{
+  font-family: var(--font-zalando);
+  color: var(--text-color);
+  @apply  text-[16px];
+}
+
 .Grid_4{
   @apply lg:mt-16 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-12;
 }
 
 .shadow_red{
-  @apply  shadow-[2px_2px_16px_rgba(255,255,120,0.3)]
+  @apply  shadow-[2px_2px_16px_rgba(230,255,0,0.2)]
 }
 .divs_container{
   @apply flex mt-6 flex-col gap-6 lg:flex-row lg:gap-8 w-full;

@@ -5,10 +5,10 @@ import Machenji_ticket from '../assets/Images/MachenjiTicket.png'
 import AM_logo from '../assets/Images/AirtelMoney_Logo.png'
 import noise from '../assets/Images/Noise.png'
 import Gwamba_concert from '../assets/Images/GwambaConcert.jpg'
-import SUCUREICON from '../components/SUCUREICON.jsx';
+import SUCUREICON from '../Components/SUCUREICON.jsx';
 import hero1 from '../assets/Images/GwambaConcert.jpg'
 import Zeze_concert from '../assets/Images/ZezeConcert.jpg'
-import { Search, Ticket, ShoppingCart, ChevronDown, ChevronLeft,CircleStop, Smartphone  ,Circle, CalendarDays, Plus, Minus} from 'lucide-react'
+import { Search, Ticket, ShoppingCart, ChevronDown, ChevronLeft,CircleStop,CircleChevronLeft, Smartphone  ,Circle, CalendarDays, Plus, Minus} from 'lucide-react'
 import D_j from '../assets/Images/DJ.jpg'
 import FilterTabs from "../Components/FilterTabs";
 import Scribble from "../Components/Scribble.jsx";
@@ -19,6 +19,7 @@ import CountDown from '../Components/CountDown.jsx'
 import FireEmoji from '../Components/FireEmoji.jsx'
 import CardIcon from '../Components/CardIcon.jsx'
 import Visa_logo from '../assets/Images/Visa.png'
+import ShareIcon from "../Components/ShareIcon.jsx"
 
 
 
@@ -69,6 +70,8 @@ const EventDetailed = () => {
   },
 ];
 
+ const [showInfo, setShowInfo] = useState(false);
+
 const [isOpen, setIsOpen] = useState(false);
 const [selectedTicket, setSelectedTicket] = useState(ticketTypes[0]);
 
@@ -85,60 +88,73 @@ const decrease = () =>
 const total = ticketCount * selectedTicket.price;
 
   return (
-    <section className='min-h-[85vh]  relative' style={bg} >
+    <section className='min-h-[85vh] py-12 relative' style={bg} >
+          
+                   <div className='flex border ml-16  z-90 w-fit transition-all duration-500 cursor-pointer rounded-full  hover:bg-(--primary-color)/80 border-(--text-color)/60  px-4 py-2 items-center gap-4'>
+      <CircleChevronLeft className='white z-90' />
+      <h1 className='text_button z-90'>Back to Home Page</h1>
+     </div>
         <div className=' flex-col  z-50 relative flex items-center justify-center px-6 h-22 lg:h-24'>
+     
+          
           <div className='flex flex-col gap-2'>
-<h1 className='white text-[32px] w-full text-center lg:text-[52px] z-90 uppercase agdasima font-bold'>LANDLORD PAKWAO CONCERT</h1>
+            
+<h1 className='white text-[32px] w-full text-center lg:text-[42px] z-90 uppercase agdasima font-bold'>LANDLORD PAKWAO CONCERT</h1>
 
-</div>
-  <img src={noise} alt="Noise" className="absolute hidden top-0 left-0 w-full h-full object-cover opacity-15 z-10" />
+          </div>
+         <img src={noise} alt="Noise" className="absolute hidden top-0 left-0 w-full h-full object-cover opacity-15 z-10" />
         </div>
               
                
                <img src={noise} alt="Noise" className="absolute  top-0 left-0 w-full h-full object-cover opacity-40 z-10" />
             
-                <div className="absolute   z-40 inset-0 bg-gradient-to-b from-(--primary-color)/75 via-[#161619]/97  to-[#161619] opacity-100"></div>
+                <div className="absolute z-10 inset-0 bg-gradient-to-b from-(--primary-color)/75 via-[#161619]/97  to-[#161619] opacity-100"></div>
 
                 
     <div className="Section_wrapper relative z-50">
 
-    <div className='w-full flex flex-col lg:flex-row gap-12'>
-      
 
-        <div className='lg:w-[30%] group shadow-[6px_6px_18px_rgba(255,255,255,0.2)] border-[#fffced] border-4 outline-4 outline-[#f8b401] ' >
+
+    <div className='w-full flex flex-col lg:flex-row gap-12 items-start'>
+      
+    {/*Left side where the image of the event is. */}
+        <div className='lg:w-[40%] lg:sticky lg:top-12 self-start group shadow-[6px_6px_18px_rgba(255,255,255,0.2)] border-[#fffced] border-4 outline-4 outline-[#f8b401] ' >
              
-                <div className='h-[430px] shadow-[6px_6px_18px_rgba(255,255,255,0.2)] w-full overflow-hidden'>
-                <motion.img src={Gwamba_concert}
-                  initial={{ scale: 1 }}
-                        animate={{ scale: 1.08 }}
-                        transition={{
-                          duration: 18,
-                          ease: "easeInOut",
-                          repeat: Infinity,
-                          repeatType: "reverse"
+                <div className='h-[520px] shadow-[6px_6px_18px_rgba(255,255,255,0.2)] w-full overflow-hidden'>
+                 <motion.img src={Gwamba_concert}
+                   initial={{ scale: 1 }}
+                   animate={{ scale: 1.08 }}
+                   transition={{
+                      duration: 12,
+                      ease: "easeInOut",
+                      repeat: Infinity,
+                      repeatType: "reverse"
                         }}
-                className='size-full  grayscale  object-cover ' />
+                    className='size-full  grayscale  object-cover ' />
 
                 </div>
         </div>
 
-        <div className='relative lg:w-[70%] flex flex-col w-full   lg:gap-6 lg:items-start lg:justify-between'>
-          <div 
-         className='flex w-full flex-col gap-3'>
+         {/*Left side where the information of the event is. */}
+        <div className='relative lg:w-[60%] flex flex-col w-full gap-8 lg:items-start justify-between'>
+            <div  className='flex w-full flex-col gap-3'>
           
             <div className='flex gap-4 items-center'>
               <h4 className="text-[#f8b401]  font-bold uppercase chivo text-[18px] lg:text-[22px]">Event Starts in.</h4> 
             </div>
 
             <div className='flex gap-6  justify-between items-center  w-full'>
-               <CountDown className="lg:w-1/2"/>
+              <div className='w-1/2'>
+                 <CountDown className=""/>
+              </div>
+               
                <div className='lg:w-1/2 flex border border-(--text-color)/40 rounded-sm p-2 gap-4 items-center w-full' >
                   <div className=''>
                                
-                                    <h4 className=" text-[#f8b401] font-bold uppercase chivo leading-[22px] text-[18px]">1st AUGUST <br /><span className='text-[10px] white'>Friday</span></h4> 
+                                    <h4 className=" text-[#f8b401] font-bold uppercase chivo leading-[22px] text-[20px]">1st AUGUST <br /><span className='text-[10px] white'>Friday</span></h4> 
                    </div>
                   <div className=''>
-                      <h4 className=" text-[#f8b401] font-bold uppercase chivo leading-[22px] text-[18px]">Aero Longe, Lilongwe <br /><span className='text-[10px] white'>17:00pm</span></h4> 
+                      <h4 className=" text-[#f8b401] font-bold uppercase chivo leading-[22px] text-[20px]">Aero Longe, Lilongwe <br /><span className='text-[10px] white'>17:00pm</span></h4> 
                   </div>
               </div>
             </div>
@@ -146,17 +162,20 @@ const total = ticketCount * selectedTicket.price;
 
        
 
-         <div className='flex gap-4 mt-6 items-center'>
-            <p  className='white capitalize font-semibold text-[12px] zalando'>122+ People waiting</p>
-               <p  className='white capitalize items-center font-semibold text-[12px] flex gap-2 zalando'>few tickets left</p>
-         </div>
+            <div className='flex gap-4 mt-6 items-center'>
+                <p  className='white capitalize font-semibold text-[12px] zalando'>122+ People waiting</p>
+                    <div className='rounded-full border bg-[#e6ff00] shadow_red border-(--text-color)/40 px-2 py-1'>
+                    <h4 className='text-black zalando font-semibold text-[10px]'>Running up!</h4>
+                  </div>
+            </div>
+         
               
 
               <motion.div variants={itemVariants} className='w-full flex flex-row gap-6 items-center mt-4'>
                   <div className='w-1/2'>
                   <div className='flex items-center justify-between'>
-                     <p className='text-grey zalando text-[12px]'>Standard Tickets</p>
-                     <p className='text-(--secondary-color) font-bold zalando text-[12px]'>65% sold</p>
+                     <p className='text_popular'>Standard Tickets</p>
+                     <p className='text-(--secondary-color) font-bold zalando text-[14px]'>65% sold</p>
                   </div>
                          
                     <div className='w-full rounded-full h-[12px]   bg-(--primary-color)'>
@@ -170,8 +189,8 @@ const total = ticketCount * selectedTicket.price;
 
                      <div className='w-1/2'>
                           <div className='flex items-center justify-between'>
-                     <p className='text-grey zalando text-[12px]'>  VIP Tickets</p>
-                     <p className='text-(--secondary-color) font-bold zalando text-[12px]'>85% sold</p>
+                     <p className='text_popular'>  VIP Tickets</p>
+                     <p className='text-(--secondary-color) font-bold zalando text-[14px]'>85% sold</p>
                   </div>
                     <div className='w-full rounded-full h-[12px]  mt-2 bg-(--primary-color)'>
                        <motion.div
@@ -186,37 +205,63 @@ const total = ticketCount * selectedTicket.price;
                                      
             </motion.div>
                  
-              
+            <div className='mt-4 flex gap-3'>
+              <h4 className='text_button'>Share Event</h4>
+              <ShareIcon color='#fffced' />
+            </div>
           </div>
-          
-          
-
-            <div className='flex mt-6 lg:flex-row flex-col items-center w-full justify-start lg:justify-between gap-4 py-2 '>
+           
+                          {/* Animated Content */}
+      <AnimatePresence>
+        {showInfo && (
+          <motion.div
+            initial={{ opacity: 0, height: 0, y: -20 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -20 }}
+            transition={{ duration: 0.45, ease: "easeInOut" }}
+            className="overflow-hidden mt-4 border border-white/10 bg-white/5 p-6"
+          >
+            <p className="text-[#fffced] leading-8 text-[15px] zalando font-light">
+              Landlord Pakwao Concert is one of the most anticipated live music
+              experiences of the year, bringing together fans for a powerful
+              night of entertainment, energy, and unforgettable performances.
+              Hosted in Lilongwe, Malawi, this event is designed to celebrate
+              music culture, nightlife, and the connection between artists and
+              supporters. Guests should expect premium sound production,
+              electrifying stage lighting, crowd engagement, and special guest
+              appearances throughout the night. Early bird ticket holders gain
+              access at the best price before standard tickets increase closer
+              to the event date. 
               
-             <div className='flex border  border-[#fffced]/90 w-full px-4 py-2 items-center gap-4'>
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+          <div className='flex mt-6 lg:flex-row flex-col items-center w-full justify-start gap-4 py-2 '>
+            <div onClick={() => setShowInfo(!showInfo)} className='flex border border-[#fffced]/90 w-full px-4 py-2 items-center gap-4'>
               <InfoIcon size={28} color="#fffced" />
-              <h4 className="text_button"> About Event </h4> 
-             </div>
-            
-            <div className='flex cursor-point bg-(--primary-color)  w-full hover:bg-(--primary-color)/80 px-4 py-2 items-center gap-4'>
-              <BuyTicket size={28} color='#fffced' className='text-[]' />
-              <h4 className="text_button"> Buy Tickets</h4> 
+              <h4 className="text_button"> About Event </h4>
             </div>
-       
+            <div className='flex cursor-point bg-(--primary-color) w-full hover:bg-(--primary-color)/80 px-4 py-2 items-center gap-4'>
+              <BuyTicket size={28} color='#fffced' />
+              <h4 className="text_button"> Buy Tickets</h4>
             </div>
-            
-          
-            
+          </div>
+ 
+
+
+     
         </div>
-
-       
-
     </div>
+
     
-    <div className='mt-12 hidden'>
-      <p className='white text-[28px] w-full text-center lg:text-[32px] z-90 uppercase agdasima font-bold'>BUY TICKETS FASTER.</p>
-      
-      <div className='divs_container'>
+    
+         {/* Moved the Checkout Section here to make it part of the scrollable column */}
+          <div className='mt-16 w-full'>
+            <p className='white text-[28px] w-full text-center lg:text-[32px] z-90 uppercase agdasima font-bold'>BUY TICKETS FASTER.</p>
+
+            <div className='divs_container'>
     
        <div className='px-4  rounded-sm lg:w-[45%] py-6 w-full hover:bg-[#272626] bg-[#272626]/40  shadow_red hover:border-(--text-color)/60 border border-[#fffced]/40'>
           <div className='flex flex-row items-center justify-between'>
@@ -231,8 +276,8 @@ const total = ticketCount * selectedTicket.price;
                </motion.div>
               </motion.h4>
 
-              <div className='rounded-full border bg-[#549d42] shadow_red border-(--text-color)/40 px-2 py-1'>
-                <h4 className='white zalando font-semibold text-[10px]'>Available</h4>
+              <div className='rounded-full border bg-[#e6ff00] shadow_red border-(--text-color)/40 px-2 py-1'>
+                <h4 className='text-[#272626] zalando font-semibold text-[10px]'>Available</h4>
               </div>
               
           </div>
@@ -278,14 +323,14 @@ const total = ticketCount * selectedTicket.price;
                 exit={{ opacity: 0, y: -8 }} className='mt-6 flex flex-row items-center gap-4'
             >
               <Ticket className='white size-6'/>
-              <h4 className='text-(--secondary-color) text-[18px] zalando font-bold'>MK{selectedTicket.price}.00</h4>
+              <h4 className='text-[#e6ff00] text-[18px] zalando font-bold'>MK{selectedTicket.price}.00</h4>
             </motion.div>
           </AnimatePresence>
           
           <div className='flex  flex-row items-center justify-between gap-2'>
               <p className='white text-[14px] zalando font-semibold mt-6'>Quantity </p>
               {/* RED COUNTER CAPSULE*/}
-              <div className='flex px-6 items-center border-(--text-color)/40  border  py-1 mt-4 rounded-full bg-(--primary-color) gap-4'>
+              <div className='flex px-6 items-center shadow_red border-(--text-color)/60  border  py-1 mt-4 rounded-full bg-(--primary-color) gap-4'>
 
                 {/* MINUS */}
                 <div onClick={decrease}
@@ -371,7 +416,7 @@ const total = ticketCount * selectedTicket.price;
           
         </div>
 
-          <div className='p-6  rounded-sm w-full hover:bg-[#272626] hover:border-(--text-color)/40 border border-[#fffced]/40'>
+          <div className='p-6   rounded-sm w-full hover:bg-[#272626] hover:border-(--text-color)/40 border border-[#fffced]/40'>
           <div className='flex flex-row items-center justify-start'>
                <motion.h4 className="white wrap-break-word font-bold uppercase chivo lg:leading-[18px] lg:text-[18px] z-50">
                 Checkout Details
@@ -384,7 +429,7 @@ const total = ticketCount * selectedTicket.price;
                 <motion.img src={Gwamba_concert} alt=""
                    className='object-cover rounded-full size-full'/>
                 <div className='absolute z-20 size-5 rounded-full flex items-center justify-center top-0 right-0 bg-(--primary-color)'>
-                  <h4 className='white zalando font-bold text-[10px]'>{ticketCount}</h4>
+                  <h4 className='text-(--secondary-color) zalando font-bold text-[10px]'>{ticketCount}</h4>
                 </div>
               </div>
 
@@ -392,14 +437,14 @@ const total = ticketCount * selectedTicket.price;
                  initial="hidden"
                 whileInView="show"
              viewport={{once:true}} className='flex flex-col '>
-                <motion.h4 variants={itemVariants}  className='zalando font-bold uppercase tracking-[6px] white text-[10px]'>Order Summary</motion.h4>
+                <motion.h4 variants={itemVariants}  className='zalando font-bold uppercase tracking-[4px] white text-[12px]'>Order Summary</motion.h4>
                 <motion.h4 variants={itemVariants} className='text-grey mt-2 zalando text-[12px]'>LANDLORD PAKWAO CONCERT</motion.h4>
                 <motion.div variants={itemVariants} className='flex flex-col lg:flex-row lg:gap-2'>
-                    <h4 className='text-grey zalando text-[12px]'>Sat, 1st August 2026</h4>
-                     <h4 className='text-grey zalando text-[12px]'>Lilongwe, Malawi</h4>
+                    <h4 className='text_popular'>Sat, 1st August 2026</h4>
+                     <h4 className='text-grey zalando text-[14px]'>Lilongwe, Malawi</h4>
                 </motion.div>
-                <h4 className='zalando text-(--secondary-color) text-[12px]'>{ticketCount} {selectedTicket.name} {ticketCount > 1 ? "Tickets" : "Ticket" } x MK {selectedTicket.price.toLocaleString()}</h4>
-                <h4 className='text-[12px] zalando text-grey'>
+                <h4 className='zalando text-(--secondary-color) text-[14px]'>{ticketCount} {selectedTicket.name} {ticketCount > 1 ? "Tickets" : "Ticket" } x MK {selectedTicket.price.toLocaleString()}</h4>
+                <h4 className='text_popular'>
                    Payment Method: <span className='font-semibold text-(--secondary-color)'>
                 {paymentMethod === "airtel" ? "Airtel Money" : "Credit Card"}
               </span>
@@ -415,20 +460,20 @@ const total = ticketCount * selectedTicket.price;
                 <div className=''>
                   <label htmlFor="first-name" className="white zalando text-[14px] font-normal">First name:</label>
                   <div className="mt-2 ">
-                    <input id="first-name" type="text" name="first-name" autoComplete="given-name" placeholder="Dannie" className="text_field "  />
+                    <input id="first-name" type="text" name="first-name" autoComplete="given-name" placeholder="Eg: Dannie" className="text_field "  />
                   </div>
                 </div>
                 <div>
                   <label htmlFor="last-name" className="white zalando text-[14px] placeholder font-normal">Last name:</label>
                    <div className="mt-2 ">
-                    <input id="last-name" type="text" name="last-name" autoComplete="given-name" placeholder="Mankhwazi" className="text_field" />
+                    <input id="last-name" type="text" name="last-name" autoComplete="given-name" placeholder="Eg: Mankhwazi" className="text_field" />
                   </div>
                 </div>
               
                 <div className="sm:col-span-2">
                   <label htmlFor="email" className="white zalando text-[14px] font-normal">Email:</label>
                     <div className="mt-2 ">
-                    <input  id="email" type="email" name="email" autoComplete="given-name" placeholder="danniemankhwazi@gmail.com" className="text_field " />
+                    <input  id="email" type="email" name="email" autoComplete="given-name" placeholder="Eg: danniemankhwazi@gmail.com" className="text_field " />
                   </div>
                 </div>
              
@@ -534,14 +579,11 @@ const total = ticketCount * selectedTicket.price;
               <button type="submit" className="block cursor-pointer text-[16px] w-full rounded-[4px] bg-green px-3.5 py-2.5 text-center text-sm font-bold text-white shadow-sm hover:bg-green/90 transition-all uppercase chivo tracking-wide">PAY MK{total.toLocaleString()}.00 Via  {paymentMethod === "airtel" ? "Airtel Money" : "Credit Card"}</button>
             </div>
         
-    
                 </form>
-             
-           </div>
-         </div>
-
-      </div>
-    </div>
+              </div>
+            </div>
+          </div>
+        </div>
     
       
     </div>

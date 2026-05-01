@@ -43,16 +43,13 @@ const LandingPage = () => {
 
 
   return (
-    <section className='lg:min-h-[85vh] min-h-[85vh] flex items-start justify-center flex-col relative z-0' style={bg} >
+    <section className='lg:min-h-[95vh] min-h-[85vh] flex items-start justify-center flex-col relative z-0' style={bg} >
               
                
                <img src={noise} alt="Noise" className="absolute top-0 left-0 w-full h-full object-cover opacity-40 z-10" />
                <img src={Machenji_ticket} alt="Tickets" className="absolute bottom-30 right-[30%] size-34 lg:size-64 object-cover opacity-40 z-50" />
                 <div className="absolute   z-40 inset-0 bg-gradient-to-t from-[#161819] via-[#0b0b0d] to-[#4f0006]/70 opacity-95"></div>
-
-             
-            
-           
+        
     <div className="lg:px-22 px-6 z-50">
 
        <motion.div

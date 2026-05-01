@@ -176,10 +176,10 @@ setSelectedOption={setSelectedCategory}
     className="Grid_4 lg:grid-cols-2 gap-6"
   >
     {filteredEvents.map((event) => (
-      <div key={event.id} className="group rounded-sm border hover:bg-[#272626] border-(--text-color)/40 flex flex-col lg:flex-row gap-2 lg:gap-4 relative">
+      <div key={event.id} className="group rounded-sm border hover:bg-[#272626] border-(--text-color)/40 flex flex-col lg:flex-row gap-2 lg:gap-4 overflow-x-hidden relative">
         
 
-        <div className="lg:h-[300px] h-[220px]  lg:w-[40%]   relative">
+        <div className="lg:h-[220px] h-[220px]  lg:w-[40%]   relative">
           <img
             src={event.image}
             alt={event.title}
@@ -210,22 +210,22 @@ setSelectedOption={setSelectedCategory}
             {event.title}
           </motion.h4>
             <div className='flex flex-col items-start z-50'>
-                    <div className='flex items-start flex-col'>
-                     <h4 className='text-grey zalando  text-[12px]'>Sat, 1st August 2026</h4>
+                    <div className='flex items-start gap-2 flex-col'>
+                     <h4 className='text-grey zalando flex items-center gap-2 text-[12px]'><CalendarDays className='size-3 text-grey' />Sat, 1st August 2026</h4>
                
-                     <h4 className='text-grey zalando text-[12px]'>Lilongwe, Malawi</h4>
+                    <h4 className='text-grey zalando flex items-center gap-2 text-[12px]'><MapPin className='size-3 text-grey' />Lilongwe Malawi</h4>
                     </div>
                  
             </div>
-            <div className='border-(--secondary-color)/40 border gap-2 flex px-4 py-1 z-50 rounded-sm'>
-              <p className='text-[12px] white font-light'>Tickets Available</p>
+            <div className=' gap-2 flex  items-center z-50 rounded-sm'>
+              <Ticket className='size-3 text-grey' />
                <h4 className="text-[#f8b401] font-light capitalize zalando text-[12px]">from <span className='font-semibold'>40K</span> </h4> 
    
             </div>
             <p className='  font-light text-grey capitalize zalando text-[12px]'>Sponsored by <span className='font-semibold'>Landrord Entertainment</span></p>
 
-                <motion.div className='flex items-center mt-4 lg:mt-6 gap-2 group relative px-4 cursor-pointer rounded-sm py-2 text-[#fffced] chivo uppercase font-bold transition-all duration-300 bg-(--primary-color) border border-none  '>
-                      <h4 className='text-[16px] text-[#fffced] chivo uppercase font-bold '>
+                <motion.div className='flex items-center mt-4  gap-2 group relative px-4 cursor-pointer rounded-sm  text-[#fffced] chivo uppercase font-bold transition-all duration-300 bg-(--primary-color) border border-none  '>
+                      <h4 className='text_button'>
                         Get Tickets
                       </h4>
                       <div className='flex relative group items-center overflow-hidden  justify-center bg-transparent p-4'>
