@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight ,ArrowLeft, RectangleEllipsis, X,CalendarDays, MapPin,Ticket,Compass,Download,Heart ,Calendar, Flame, Zap } from 'lucide-react';
+import { ArrowRight ,ArrowLeft,House,RectangleEllipsis, X,CalendarDays, MapPin,Ticket,Compass,Download,Heart ,Calendar, Flame, Zap } from 'lucide-react';
 import Machenji_logo from '../assets/Images/Machenji_logo.png'
 import MenuIcon from '../Components/MenuIcon';
 import Gwamba_concert from '../assets/Images/GwambaConcert.jpg'
@@ -92,14 +92,15 @@ const Header = () => {
     };
 
   const quickLinks = [
-    { name: "Browse Events", icon: <Compass className="size-4" />, href: "#events" },
-    { name: "Event Schedule", icon: <Calendar className="size-4" />, href: "#schedule" },
-    { name: "Trending Now", icon: <Flame className="size-4" />, href: "#trending" },
-    { name: "Partner With Us", icon: <Zap className="size-4" />, href: "#host" },
+    { name: "Find Events", icon: <Compass className="size-4" />, href: "#events" },
+    { name: "Create Events", icon: <Calendar className="size-4" />, href: "#schedule" },
+    { name: "Our Solution", icon: <Flame className="size-4" />, href: "#trending" },
+    { name: "FAQs", icon: <Zap className="size-4" />, href: "#host" },
+    {name:"Support"}
   ];
 
   return (
-    <div  className="fixed bg-trasparent hidden top-0 left-0 z-50 w-full ">
+    <div  className="fixed bg-trasparent top-0 left-0 z-100 w-full ">
    
       
       <div className='flex items-center justify-between px-6 py-4 lg:px-22'>
@@ -113,13 +114,17 @@ const Header = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-            style={bg}  className='fixed inset-0 bg-[#272626] backdrop-blur-2xl z-[100] Section_wrapper '
+            style={bg}  className='fixed inset-0 bg-[#272626] backdrop-blur-2xl z-100 Section_wrapper overflow-y-auto'
             >
-              <div className='flex justify-between items-center w-full'>
+              {/* Overlay layers */}
+              <img src={noise} alt="Noise" className="absolute top-0 left-0 w-full h-full object-cover opacity-40 z-10" />
+              <div className="absolute z-20 inset-0 bg-gradient-to-b from-(--primary-color)/75 via-[#161619]/97 to-[#161619] opacity-100"></div>
+
+              <div className='flex justify-between items-center w-full relative z-50'>
                  <motion.div onClick={() => setMenuOpen(false)} className='flex border group w-fit transition-all duration-500 cursor-pointer rounded-sm hover:bg-(--primary-color)/80 border-(--text-color)/60 px-6  py-2 items-center gap-4'>
                   <div className='flex relative group items-center overflow-hidden rounded-sm  justify-center bg-(--secondary-color) size-7 p-2'>
                     <ArrowLeft className='absolute  size-full transform  transition-all duration-490  group-hover:translate-x-10 text-[#272626]' />
-                    <ArrowLeft className='absolute  size-full transform -translate-x-10 opacity-0  transition-all duration-600 group-hover:opacity-100  group-hover:translate-x-0 text-[#272626]' />
+                    <House className='absolute  size-full transform -translate-x-10 opacity-0  transition-all duration-600 group-hover:opacity-100  group-hover:translate-x-0 text-[#272626]' />
                   </div>
             <h3 className='text_button'>
             Back To Home
@@ -128,20 +133,29 @@ const Header = () => {
                  </motion.div>
               </div>
 
-              <div className='flex items-start justify-between flex-col mt-22'>
+              <div className='flex items-start justify-between flex-col mt-22 relative z-50'>
                 <div className='flex flex-col gap-8'>
                   <h4 className='zalando text-grey tracking-[4px] uppercase text-xs font-bold border-b border-white/10 pb-4'>Quick Navigation</h4>   
                 </div>
 
                 <div className='divs_container'>
-                  <div className='px-4 chivo uppercase rounded-sm lg:w-[30%] py-6 w-full hover:bg-[#272626] bg-[#272626]/40  shadow_red hover:border-(--text-color)/60 border border-[#fffced]/40'>
-                    <p className='white text-2xl'>Find Events</p>
-                    <p className='white text-2xl'>Our Solution</p>
-                    <p className='white text-2xl'>How to buy a Ticket</p>
-                    <p className='white text-2xl'>Support</p> 
-                </div>
+                  <ul className="px-4 chivo flex flex-col gap-2 uppercase rounded-sm lg:w-[30%] py-6 w-full ">
 
-                    <div className='p-6 lg:w-[70%]  rounded-sm w-full hover:bg-[#272626] hover:border-(--text-color)/40 border border-[#fffced]/40'>
+
+            {quickLinks.map((link, index) => (
+               <li key={link.name} className=" hover:translate-x-2 transition-all duration-350 ease-in-out cursor-pointer">
+                 <a href={link.href || "#"} className="flex items-center gap-3 py-2 text-2xl white">
+                   {link.icon}
+                   {link.name}
+                 </a>
+                </li>
+
+              ))}
+
+
+                  </ul>
+
+                    <div className='p-6 lg:w-[70%] hidden rounded-sm w-full hover:bg-[#272626] hover:border-(--text-color)/40 border border-[#fffced]/40'>
                     </div>
                 </div>
                 

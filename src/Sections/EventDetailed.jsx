@@ -239,11 +239,11 @@ const total = ticketCount * selectedTicket.price;
       </AnimatePresence>
 
           <div className='flex mt-6 lg:flex-row flex-col items-center w-full justify-start gap-4 py-2 '>
-            <div onClick={() => setShowInfo(!showInfo)} className='flex border border-[#fffced]/90 w-full px-4 py-2 items-center gap-4'>
+            <div onClick={() => setShowInfo(!showInfo)} className='flex border cursor-pointer border-[#fffced]/90 w-full px-4 py-2 items-center gap-4 '>
               <InfoIcon size={28} color="#fffced" />
               <h4 className="text_button"> About Event </h4>
             </div>
-            <div className='flex cursor-point bg-(--primary-color) w-full hover:bg-(--primary-color)/80 px-4 py-2 items-center gap-4'>
+            <div className='flex cursor-pointer cursor-point bg-(--primary-color) w-full hover:bg-(--primary-color)/80 px-4 py-2 items-center gap-4  '>
               <BuyTicket size={28} color='#fffced' />
               <h4 className="text_button"> Buy Tickets</h4>
             </div>
